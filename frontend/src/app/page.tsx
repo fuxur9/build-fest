@@ -8,23 +8,12 @@ import {
   Code,
   Zap,
   ArrowRight,
-  Star,
   ChevronDown,
 } from "lucide-react";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import {
-  Collapsible,
-  CollapsibleContent,
-  CollapsibleTrigger,
-} from "@/components/ui/collapsible";
+import { Collapsible, CollapsibleTrigger } from "@/components/ui/collapsible";
 
 export default function Home() {
   return (
@@ -268,7 +257,7 @@ export default function Home() {
                   Innovate
                 </h3>
                 <p className='text-muted-foreground'>
-                  Push the boundaries of what's possible in decentralized
+                  Push the boundaries of what&apos;s possible in decentralized
                   technology.
                 </p>
               </CardContent>

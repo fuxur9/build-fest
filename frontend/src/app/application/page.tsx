@@ -1,12 +1,6 @@
 "use client";
 
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -289,9 +283,10 @@ export default function Register() {
                   Why do you want to participate in BadgerHacks? *
                 </label>
                 <p className='text-xs text-muted-foreground mb-2'>
-                  Please don't use AI here! There's no length minimum/maximum,
-                  we're just curious what you're looking forward to and why you
-                  think BadgerHacks would be great for you.
+                  Please don&apos;t use AI here! There&apos;s no length
+                  minimum/maximum, we&apos;re just curious what you&apos;re
+                  looking forward to and why you think BadgerHacks would be
+                  great for you.
                 </p>
                 <Textarea rows={4} />
               </div>
@@ -315,9 +310,10 @@ export default function Register() {
                   What skills do you have?
                 </label>
                 <p className='text-xs text-muted-foreground mb-2'>
-                  For example, "I've written some Python before", "I've made a
-                  website", "Java", "Frontend (React)" or "Backend (Python,
-                  NodeJS)". No specific prior skills are required for
+                  For example, &quot;I&apos;ve written some Python before&quot;,
+                  &quot;I&apos;ve made a website&quot;, &quot;Java&quot;,
+                  &quot;Frontend (React)&quot; or &quot;Backend (Python,
+                  NodeJS)&quot;. No specific prior skills are required for
                   BadgerHacks. Having an idea of what our hackers already know
                   helps us calibrate our workshops to best serve our audience.
                 </p>
