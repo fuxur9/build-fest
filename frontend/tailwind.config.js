@@ -47,6 +47,16 @@ module.exports = {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+      fontFamily: {
+        sans: [
+          "var(--font-space-grotesk)",
+          "Space Grotesk",
+          "system-ui",
+          "sans-serif",
+        ],
+        serif: ["Georgia", "Times New Roman", "serif"],
+        mono: ["Fira Code", "monospace"],
+      },
     },
   },
   plugins: [],

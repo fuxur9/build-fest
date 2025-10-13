@@ -30,7 +30,7 @@ export default function Home() {
                 height={120}
                 className='animate-pulse flex-shrink-0'
               />
-              <h1 className='text-5xl md:text-7xl font-bold text-foreground'>
+              <h1 className='text-5xl md:text-7xl font-bold text-foreground font-serif'>
                 DOPE Hackathon
               </h1>
             </div>
@@ -95,6 +95,116 @@ export default function Home() {
                 <p className='text-muted-foreground'>November 15-16, 2025</p>
               </CardContent>
             </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Host Organizations */}
+      <section className='py-20 px-4 sm:px-6 lg:px-8'>
+        <div className='max-w-4xl mx-auto text-center'>
+          <h2 className='text-3xl md:text-4xl font-bold text-foreground mb-8'>
+            Host Organizations
+          </h2>
+
+          <div className='flex flex-col sm:flex-row items-center justify-center gap-8 sm:gap-12'>
+            <div className='flex flex-col items-center text-center'>
+              <Image
+                src='/tech-exploration-lab.png'
+                alt='Tech Exploration Lab'
+                width={300}
+                height={300}
+                className='rounded-lg object-contain mb-3'
+              />
+              <span className='text-lg font-semibold text-foreground'>
+                Tech Exploration Lab
+              </span>
+            </div>
+
+            <span className='text-3xl font-bold text-primary'>×</span>
+
+            <div className='flex flex-col items-center text-center'>
+              <Image
+                src='/badger-blockchain.png'
+                alt='Badger Blockchain'
+                width={500}
+                height={271}
+                className='rounded-lg object-contain mb-3'
+              />
+              <span className='text-lg font-semibold text-foreground'>
+                Badger Blockchain
+              </span>
+            </div>
+
+            <span className='text-3xl font-bold text-primary'>×</span>
+
+            <div className='flex flex-col items-center text-center'>
+              <Image
+                src='/transcend.png'
+                alt='Transcend'
+                width={300}
+                height={300}
+                className='rounded-lg object-contain mb-3'
+              />
+              <span className='text-lg font-semibold text-foreground'>
+                Transcend
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Sponsors Section */}
+      <section className='py-20 px-4 sm:px-6 lg:px-8'>
+        <div className='max-w-7xl mx-auto'>
+          <div className='text-center mb-16'>
+            <h2 className='text-4xl md:text-5xl font-bold text-foreground mb-6'>
+              Our Sponsors
+            </h2>
+          </div>
+
+          <div className='flex flex-wrap justify-center items-center gap-12'>
+            <Image
+              src='/cursor-text.png'
+              alt='Cursor'
+              width={200}
+              height={200}
+              className='object-contain opacity-70 hover:opacity-100 transition-opacity'
+            />
+            <Image
+              src='/college-xyz.png'
+              alt='College.xyz'
+              width={200}
+              height={200}
+              className='object-contain opacity-70 hover:opacity-100 transition-opacity'
+            />
+            <Image
+              src='/sui-text.png'
+              alt='Sui'
+              width={200}
+              height={200}
+              className='object-contain opacity-70 hover:opacity-100 transition-opacity'
+            />
+            <Image
+              src='/gemini.png'
+              alt='Gemini'
+              width={200}
+              height={200}
+              className='object-contain opacity-70 hover:opacity-100 transition-opacity'
+            />
+            <Image
+              src='/turtle-xyz.png'
+              alt='Turtle.xyz'
+              width={200}
+              height={200}
+              className='object-contain opacity-70 hover:opacity-100 transition-opacity'
+            />
+            <Image
+              src='/cncf.png'
+              alt='CNCF'
+              width={200}
+              height={200}
+              className='object-contain opacity-70 hover:opacity-100 transition-opacity'
+            />
           </div>
         </div>
       </section>
@@ -273,136 +383,6 @@ export default function Home() {
                 </p>
               </CardContent>
             </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Hosts Section */}
-      <section className='py-20 px-4 sm:px-6 lg:px-8'>
-        <div className='max-w-7xl mx-auto'>
-          <div className='text-center mb-16'>
-            <h2 className='text-4xl md:text-5xl font-bold text-foreground mb-6'>
-              Host Organizations
-            </h2>
-            <p className='text-xl text-muted-foreground'>
-              Brought to you by leading organizations in blockchain and
-              technology
-            </p>
-          </div>
-
-          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
-            <Card className='bg-card/30 backdrop-blur-md border border-border hover:bg-card/40 transition-colors'>
-              <CardContent className='p-8 text-center'>
-                <div className='w-20 h-20 mx-auto mb-4 flex items-center justify-center'>
-                  <Image
-                    src='/tech-exploration-lab.png'
-                    alt='Tech Exploration Lab'
-                    width={80}
-                    height={80}
-                    className='rounded-lg object-contain'
-                  />
-                </div>
-                <h3 className='text-xl font-semibold text-card-foreground mb-2'>
-                  Tech Exploration Lab
-                </h3>
-                <p className='text-muted-foreground'>University of Wisconsin</p>
-              </CardContent>
-            </Card>
-
-            <Card className='bg-card/30 backdrop-blur-md border border-border hover:bg-card/40 transition-colors'>
-              <CardContent className='p-8 text-center'>
-                <div className='w-20 h-20 mx-auto mb-4 flex items-center justify-center'>
-                  <Image
-                    src='/badger-blockchain.png'
-                    alt='Badger Blockchain'
-                    width={80}
-                    height={80}
-                    className='rounded-lg object-contain'
-                  />
-                </div>
-                <h3 className='text-xl font-semibold text-card-foreground mb-2'>
-                  Badger Blockchain
-                </h3>
-                <p className='text-muted-foreground'>Student Organization</p>
-              </CardContent>
-            </Card>
-
-            <Card className='bg-card/30 backdrop-blur-md border border-border hover:bg-card/40 transition-colors'>
-              <CardContent className='p-8 text-center'>
-                <div className='w-20 h-20 mx-auto mb-4 flex items-center justify-center'>
-                  <Image
-                    src='/transcend.png'
-                    alt='Transcend'
-                    width={80}
-                    height={80}
-                    className='rounded-lg object-contain'
-                  />
-                </div>
-                <h3 className='text-xl font-semibold text-card-foreground mb-2'>
-                  Transcend
-                </h3>
-                <p className='text-muted-foreground'>Student Organization</p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Sponsors Section */}
-      <section className='py-20 px-4 sm:px-6 lg:px-8'>
-        <div className='max-w-7xl mx-auto'>
-          <div className='text-center mb-16'>
-            <h2 className='text-4xl md:text-5xl font-bold text-foreground mb-6'>
-              Our Sponsors
-            </h2>
-            <p className='text-xl text-muted-foreground'>
-              Thank you to our amazing sponsors who make this event possible
-            </p>
-          </div>
-
-          <div className='flex flex-wrap justify-center items-center gap-12'>
-            <Image
-              src='/cursor.svg'
-              alt='Cursor'
-              width={120}
-              height={120}
-              className='object-contain opacity-70 hover:opacity-100 transition-opacity'
-            />
-            <Image
-              src='/college-xyz.png'
-              alt='College.xyz'
-              width={120}
-              height={120}
-              className='object-contain opacity-70 hover:opacity-100 transition-opacity'
-            />
-            <Image
-              src='/sui.jpg'
-              alt='Sui'
-              width={120}
-              height={120}
-              className='object-contain opacity-70 hover:opacity-100 transition-opacity'
-            />
-            <Image
-              src='/gemini.png'
-              alt='Gemini'
-              width={120}
-              height={120}
-              className='object-contain opacity-70 hover:opacity-100 transition-opacity'
-            />
-            <Image
-              src='/turtle-xyz.png'
-              alt='Turtle.xyz'
-              width={120}
-              height={120}
-              className='object-contain opacity-70 hover:opacity-100 transition-opacity'
-            />
-            <Image
-              src='/cncf.png'
-              alt='CNCF'
-              width={120}
-              height={120}
-              className='object-contain opacity-70 hover:opacity-100 transition-opacity'
-            />
           </div>
         </div>
       </section>

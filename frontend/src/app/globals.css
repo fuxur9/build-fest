@@ -36,9 +36,10 @@
     --sidebar-accent-foreground: 240 41.4634% 8.0392%;
     --sidebar-border: 198 18.5185% 89.4118%;
     --sidebar-ring: 0 100% 30.3922%;
-    --font-sans: Outfit, sans-serif;
-    --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
-    --font-mono: Fira Code, monospace;
+    --font-sans: var(--font-space-grotesk), "Space Grotesk", system-ui,
+      sans-serif;
+    --font-serif: "Georgia", "Times New Roman", serif;
+    --font-mono: "Fira Code", monospace;
     --radius: 0.5rem;
     --shadow-x: 0px;
     --shadow-y: 4px;
@@ -96,9 +97,10 @@
     --sidebar-accent-foreground: 240 41.4634% 8.0392%;
     --sidebar-border: 240 34.2857% 27.451%;
     --sidebar-ring: 0 100% 30.3922%;
-    --font-sans: Outfit, sans-serif;
-    --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
-    --font-mono: Fira Code, monospace;
+    --font-sans: var(--font-space-grotesk), "Space Grotesk", system-ui,
+      sans-serif;
+    --font-serif: "Georgia", "Times New Roman", serif;
+    --font-mono: "Fira Code", monospace;
     --radius: 0.5rem;
     --shadow-x: 0px;
     --shadow-y: 4px;
@@ -127,6 +129,6 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
   }
 }
