@@ -3,21 +3,51 @@ import { Button } from "@/components/ui/button";
 
 export default function Navbar() {
   return (
-    <nav className='fixed top-0 w-full z-50 bg-background border-b border-border'>
-      <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
+    <nav className='fixed top-0 w-full z-50 bg-white'>
+      <div className='max-w-6xl mx-auto px-4 sm:px-6 lg:px-8'>
         <div className='flex justify-between items-center h-16'>
           {/* Logo */}
-          <Link href='/' className='flex items-center space-x-3'>
-            <span className='text-xl font-bold text-foreground'>
-              Badger Hackathon
-            </span>
+          <Link href='/' className='flex items-center'>
+            <span className='text-xl font-bold text-black'>BUILD Fest</span>
           </Link>
 
           {/* Navigation */}
-          <Button asChild>
-            <Link href='/application'>Apply Now</Link>
-          </Button>
+          <div className='flex items-center space-x-8'>
+            <Link
+              href='#sponsors'
+              className='text-black font-bold hover:text-gray-600 transition-colors'
+            >
+              SPONSORS
+            </Link>
+            <Link
+              href='#tracks'
+              className='text-black font-bold hover:text-gray-600 transition-colors'
+            >
+              TRACKS
+            </Link>
+            <Link
+              href='#about'
+              className='text-black font-bold hover:text-gray-600 transition-colors'
+            >
+              ABOUT
+            </Link>
+
+            <Button
+              asChild
+              className='bg-primary text-white hover:bg-primary/90'
+            >
+              <Link
+                href='https://forms.gle/V41KWM2T9SjHj1cG9'
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                REGISTER
+              </Link>
+            </Button>
+          </div>
         </div>
+        {/* Separator line */}
+        <div className='w-full h-px bg-primary'></div>
       </div>
     </nav>
   );

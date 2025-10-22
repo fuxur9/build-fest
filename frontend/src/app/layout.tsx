@@ -10,7 +10,7 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "Badger Blockchain Hackathon",
+  title: "BUILD Fest",
   description:
     "Join the ultimate blockchain hackathon and build the future of decentralized technology",
 };

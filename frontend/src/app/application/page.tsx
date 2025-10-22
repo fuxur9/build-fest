@@ -280,13 +280,13 @@ export default function Register() {
 
               <div className='space-y-2'>
                 <label className='text-sm font-medium text-foreground'>
-                  Why do you want to participate in BadgerHacks? *
+                  Why do you want to participate in BUILD Fest? *
                 </label>
                 <p className='text-xs text-muted-foreground mb-2'>
                   Please don&apos;t use AI here! There&apos;s no length
                   minimum/maximum, we&apos;re just curious what you&apos;re
-                  looking forward to and why you think BadgerHacks would be
-                  great for you.
+                  looking forward to and why you think BUILD Fest would be great
+                  for you.
                 </p>
                 <Textarea rows={4} />
               </div>
@@ -299,7 +299,7 @@ export default function Register() {
                 <p className='text-xs text-muted-foreground mb-2'>
                   If you are not currently in any CS classes, list the ones you
                   completed most recently (if any). No amount of CS coursework
-                  is required for BadgerHacks, but we want to make sure our
+                  is required for BUILD Fest, but we want to make sure our
                   workshops are accurately targeted for our audience.
                 </p>
                 <Textarea rows={3} />
@@ -313,9 +313,9 @@ export default function Register() {
                   For example, &quot;I&apos;ve written some Python before&quot;,
                   &quot;I&apos;ve made a website&quot;, &quot;Java&quot;,
                   &quot;Frontend (React)&quot; or &quot;Backend (Python,
-                  NodeJS)&quot;. No specific prior skills are required for
-                  BadgerHacks. Having an idea of what our hackers already know
-                  helps us calibrate our workshops to best serve our audience.
+                  NodeJS)&quot;. No specific prior skills are required for BUILD
+                  Fest. Having an idea of what our hackers already know helps us
+                  calibrate our workshops to best serve our audience.
                 </p>
                 <Textarea rows={3} />
               </div>
@@ -342,7 +342,7 @@ export default function Register() {
 
               <div className='space-y-2'>
                 <label className='text-sm font-medium text-foreground'>
-                  How did you hear about BadgerHacks?
+                  How did you hear about BUILD Fest?
                 </label>
                 <Input />
               </div>
@@ -378,26 +378,26 @@ export default function Register() {
               <div className='space-y-4'>
                 <div className='bg-muted/50 p-4 rounded-lg'>
                   <h4 className='font-semibold text-foreground mb-2'>
-                    BadgerHacks Release of Liability Statement
+                    BUILD Fest Release of Liability Statement
                   </h4>
                   <p className='text-sm text-muted-foreground mb-4'>
-                    By participating in BadgerHacks, I acknowledge that my
+                    By participating in BUILD Fest, I acknowledge that my
                     involvement in the hackathon is voluntary and at my own
-                    risk. I agree to release, waive, and hold harmless
-                    BadgerHacks, its organizers, sponsors, and venue providers
-                    from any and all claims, liabilities, demands, or causes of
-                    action, known or unknown, that may arise out of or relate to
-                    my participation in this event, including but not limited to
+                    risk. I agree to release, waive, and hold harmless BUILD
+                    Fest, its organizers, sponsors, and venue providers from any
+                    and all claims, liabilities, demands, or causes of action,
+                    known or unknown, that may arise out of or relate to my
+                    participation in this event, including but not limited to
                     personal injury, property damage, or loss.
                   </p>
                   <p className='text-sm text-muted-foreground mb-4'>
-                    I understand that BadgerHacks is not responsible for any
+                    I understand that BUILD Fest is not responsible for any
                     technical failures, lost data, or other issues that may
                     affect my participation. I am responsible for my own safety,
                     conduct, and property while at the event.
                   </p>
                   <p className='text-sm text-muted-foreground'>
-                    By participating in BadgerHacks, I confirm that I have read
+                    By participating in BUILD Fest, I confirm that I have read
                     and understood the Release of Liability Statement and agree
                     to its terms.
                   </p>
@@ -429,7 +429,7 @@ export default function Register() {
                     className='text-sm text-muted-foreground'
                   >
                     I understand that I have not yet uploaded a resume, so I
-                    will receive an email from BadgerHacks allowing me to upload
+                    will receive an email from BUILD Fest allowing me to upload
                     it before the event.
                   </label>
                 </div>
@@ -444,7 +444,7 @@ export default function Register() {
               </p>
               <p className='text-sm text-muted-foreground'>
                 If you do not receive a confirmation email or your details are
-                incorrect, please reach out to support@BadgerHacks.io for
+                incorrect, please reach out to support@BUILDFest.io for
                 assistance.
               </p>
             </div>
