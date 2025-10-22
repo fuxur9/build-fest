@@ -218,7 +218,7 @@ export default function Home() {
                   </div>
                   <p className='text-muted-foreground mb-4'>
                     This track is defined by startup-level speed and efficiency.
-                    You'll be provided with ample help and modern tools to
+                    You&apos;ll be provided with ample help and modern tools to
                     supercharge your research and rapid development. Your
                     24-hour challenge is to go from ideation to a working demo
                     and a polished pitch-deck for your venture. The judges are
