@@ -193,7 +193,7 @@ export default function Home() {
 
           <div className='space-y-8'>
             <div className='grid grid-cols-1 lg:grid-cols-2 gap-8'>
-              {/* Startup Track */}
+              {/* Venture Track */}
               <Card className='bg-gradient-to-br from-primary/20 to-accent/20 backdrop-blur-md border border-primary/30'>
                 <CardContent className='p-6'>
                   <div className='flex items-center justify-between mb-4'>
@@ -203,7 +203,7 @@ export default function Home() {
                       </div>
                       <div>
                         <h3 className='text-2xl font-bold text-card-foreground'>
-                          Startup Track
+                          Venture Track
                         </h3>
                         <div className='flex items-center space-x-2'>
                           <Badge
@@ -217,8 +217,16 @@ export default function Home() {
                     </div>
                   </div>
                   <p className='text-muted-foreground mb-4'>
-                    Build a complete startup with business model, pitch deck,
-                    and MVP. Focus on market validation and scalability.
+                    This track is defined by startup-level speed and efficiency.
+                    You'll be provided with ample help and modern tools to
+                    supercharge your research and rapid development. Your
+                    24-hour challenge is to go from ideation to a working demo
+                    and a polished pitch-deck for your venture. The judges are
+                    experienced founders, investors, and tech leaders. They will
+                    critically evaluate your problem validation, the
+                    justification for your market-fit, and the ingenuity of your
+                    implemented solution. You must convince them your venture is
+                    investment-worthy.
                   </p>
                   <Collapsible>
                     <CollapsibleTrigger className='flex items-center justify-between w-full p-3 text-left text-primary hover:text-primary/80 transition-colors rounded-md hover:bg-primary/5'>
