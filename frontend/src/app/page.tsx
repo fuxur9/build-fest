@@ -20,21 +20,22 @@ export default function Home() {
     <div className='min-h-screen bg-gradient-to-br from-background via-primary/10 to-background'>
       {/* Hero Section */}
       <section className='pt-32 pb-20 px-4 sm:px-6 lg:px-8'>
-        <div className='max-w-7xl mx-auto text-center'>
+        <div className='max-w-8xl mx-auto text-center'>
           <div className='mb-8'>
             <div className='flex items-center justify-center gap-8 mb-8'>
-              <Image
+              <h1 className='text-6xl md:text-8xl lg:text-9xl font-bold text-foreground font-serif'>
+                BUILD Fest 2025
+              </h1>
+            </div>
+
+            <p className='text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto'>
+              {/* <Image
                 src='/badger-unleashed.png'
                 alt='Badger Unleashed'
                 width={120}
                 height={120}
                 className='flex-shrink-0'
-              />
-              <h1 className='text-5xl md:text-7xl font-bold text-foreground font-serif'>
-                BUILD Fest
-              </h1>
-            </div>
-            <p className='text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto'>
+              /> */}
               Badger • Unleashed • Innovate • Learn • Deliver
             </p>
           </div>
@@ -69,6 +70,9 @@ export default function Home() {
                   Location
                 </h3>
                 <p className='text-muted-foreground'>Morgridge Hall</p>
+                <p className='text-muted-foreground'>
+                  Hello, World! Auditorium
+                </p>
               </CardContent>
             </Card>
             <Card className='bg-card/50 backdrop-blur-md border border-border hover:bg-card/60 transition-colors'>
@@ -93,14 +97,19 @@ export default function Home() {
             </h2>
           </div>
 
-          <div className='flex flex-wrap justify-center items-center gap-12'>
+          {/* Cursor Logo - Single Row */}
+          <div className='flex justify-center items-center mb-12'>
             <Image
               src='/cursor-text.png'
               alt='Cursor'
-              width={200}
-              height={200}
+              width={500}
+              height={500}
               className='object-contain opacity-70 hover:opacity-100 transition-opacity'
             />
+          </div>
+
+          {/* Other Sponsors - Single Row */}
+          <div className='flex flex-wrap justify-center items-center gap-12'>
             <Image
               src='/college-xyz.png'
               alt='College.xyz'
@@ -388,7 +397,7 @@ export default function Home() {
                 className='rounded-lg'
               />
               <span className='text-lg font-bold text-foreground'>
-                BUILD Fest 2024
+                BUILD Fest 2025
               </span>
             </div>
             <div className='flex space-x-6'>
@@ -414,7 +423,7 @@ export default function Home() {
           </div>
           <div className='mt-8 pt-8 border-t border-border text-center'>
             <p className='text-muted-foreground'>
-              © 2024 BUILD Fest. All rights reserved.
+              © 2025 BUILD Fest. All rights reserved.
             </p>
           </div>
         </div>
