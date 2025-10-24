@@ -1,5 +1,7 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 import {
   Calendar,
   MapPin,
@@ -13,9 +15,16 @@ import {
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Collapsible, CollapsibleTrigger } from "@/components/ui/collapsible";
+import {
+  Collapsible,
+  CollapsibleTrigger,
+  CollapsibleContent,
+} from "@/components/ui/collapsible";
 
 export default function Home() {
+  const [isVentureOpen, setIsVentureOpen] = useState(false);
+  const [isBlockchainOpen, setIsBlockchainOpen] = useState(false);
+
   return (
     <div className='min-h-screen bg-gradient-to-br from-background via-primary/10 to-background'>
       {/* Hero Section */}
@@ -23,19 +32,12 @@ export default function Home() {
         <div className='max-w-8xl mx-auto text-center'>
           <div className='mb-8'>
             <div className='flex items-center justify-center gap-8 mb-8'>
-              <h1 className='text-6xl md:text-8xl lg:text-9xl font-bold text-foreground font-serif'>
+              <h1 className='text-6xl md:text-8xl lg:text-9xl font-bold text-foreground font-space-grotesk'>
                 BUILD Fest 2025
               </h1>
             </div>
 
-            <p className='text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto'>
-              {/* <Image
-                src='/badger-unleashed.png'
-                alt='Badger Unleashed'
-                width={120}
-                height={120}
-                className='flex-shrink-0'
-              /> */}
+            <p className='text-2xl md:text-3xl text-muted-foreground mb-8 max-w-3xl mx-auto'>
               Badger • Unleashed • Innovate • Learn • Deliver
             </p>
           </div>
@@ -47,7 +49,7 @@ export default function Home() {
                 target='_blank'
                 rel='noopener noreferrer'
               >
-                Apply Now
+                Register Now
                 <ArrowRight className='ml-2 w-5 h-5' />
               </Link>
             </Button>
@@ -57,31 +59,35 @@ export default function Home() {
               className='text-lg px-8 py-6'
               asChild
             >
-              <Link href='#about'>Learn More</Link>
+              <Link href='https://techexplorationlab.wisc.edu/'>
+                Learn More
+              </Link>
             </Button>
           </div>
 
           {/* Event Details */}
-          <div className='grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto'>
+          <div className='grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto'>
             <Card className='bg-card/50 backdrop-blur-md border border-border hover:bg-card/60 transition-colors'>
-              <CardContent className='p-6 text-center'>
-                <MapPin className='w-8 h-8 text-primary mx-auto mb-4' />
-                <h3 className='text-xl font-semibold text-card-foreground mb-2'>
+              <CardContent className='p-4 text-center'>
+                <MapPin className='w-12 h-12 text-primary mx-auto mb-4' />
+                <h3 className='text-2xl font-semibold text-card-foreground mb-2'>
                   Location
                 </h3>
-                <p className='text-muted-foreground'>Morgridge Hall</p>
-                <p className='text-muted-foreground'>
+                <p className='text-xl text-muted-foreground'>Morgridge Hall</p>
+                {/* <p className='text-muted-foreground'>
                   Hello, World! Auditorium
-                </p>
+                </p> */}
               </CardContent>
             </Card>
             <Card className='bg-card/50 backdrop-blur-md border border-border hover:bg-card/60 transition-colors'>
-              <CardContent className='p-6 text-center'>
-                <Calendar className='w-8 h-8 text-primary mx-auto mb-4' />
-                <h3 className='text-xl font-semibold text-card-foreground mb-2'>
+              <CardContent className='p-4 text-center'>
+                <Calendar className='w-12 h-12 text-primary mx-auto mb-4' />
+                <h3 className='text-2xl font-semibold text-card-foreground mb-2'>
                   Date
                 </h3>
-                <p className='text-muted-foreground'>November 15-16, 2025</p>
+                <p className='text-xl text-muted-foreground'>
+                  November 15-16, 2025
+                </p>
               </CardContent>
             </Card>
           </div>
@@ -89,7 +95,7 @@ export default function Home() {
       </section>
 
       {/* Sponsors Section */}
-      <section className='py-20 px-4 sm:px-6 lg:px-8'>
+      <section id='sponsors' className='py-20 px-4 sm:px-6 lg:px-8'>
         <div className='max-w-7xl mx-auto'>
           <div className='text-center mb-16'>
             <h2 className='text-4xl md:text-5xl font-bold text-foreground mb-6'>
@@ -99,52 +105,88 @@ export default function Home() {
 
           {/* Cursor Logo - Single Row */}
           <div className='flex justify-center items-center mb-12'>
-            <Image
-              src='/cursor-text.png'
-              alt='Cursor'
-              width={500}
-              height={500}
-              className='object-contain opacity-70 hover:opacity-100 transition-opacity'
-            />
+            <Link
+              href='https://cursor.com'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              <Image
+                src='/cursor-text.png'
+                alt='Cursor'
+                width={500}
+                height={500}
+                className='object-contain opacity-70 hover:opacity-100 transition-opacity'
+              />
+            </Link>
           </div>
 
           {/* Other Sponsors - Single Row */}
           <div className='flex flex-wrap justify-center items-center gap-12'>
-            <Image
-              src='/college-xyz.png'
-              alt='College.xyz'
-              width={200}
-              height={200}
-              className='object-contain opacity-70 hover:opacity-100 transition-opacity'
-            />
-            <Image
-              src='/sui-text.png'
-              alt='Sui'
-              width={200}
-              height={200}
-              className='object-contain opacity-70 hover:opacity-100 transition-opacity'
-            />
-            <Image
-              src='/gemini.png'
-              alt='Gemini'
-              width={200}
-              height={200}
-              className='object-contain opacity-70 hover:opacity-100 transition-opacity'
-            />
-            <Image
-              src='/turtle-xyz.png'
-              alt='Turtle.xyz'
-              width={200}
-              height={200}
-              className='object-contain opacity-70 hover:opacity-100 transition-opacity'
-            />
-            <Image
-              src='/cncf.png'
-              alt='CNCF'
-              width={200}
-              height={200}
-              className='object-contain opacity-70 hover:opacity-100 transition-opacity'
-            />
+            <Link
+              href='https://college.xyz'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              <Image
+                src='/college-xyz.png'
+                alt='College.xyz'
+                width={200}
+                height={200}
+                className='object-contain opacity-70 hover:opacity-100 transition-opacity'
+              />
+            </Link>
+            <Link
+              href='https://sui.io'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              <Image
+                src='/sui-text.png'
+                alt='Sui'
+                width={200}
+                height={200}
+                className='object-contain opacity-70 hover:opacity-100 transition-opacity'
+              />
+            </Link>
+            <Link
+              href='https://gemini.com'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              <Image
+                src='/gemini.png'
+                alt='Gemini'
+                width={200}
+                height={200}
+                className='object-contain opacity-70 hover:opacity-100 transition-opacity'
+              />
+            </Link>
+            <Link
+              href='https://turtle.xyz'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              <Image
+                src='/turtle-xyz.png'
+                alt='Turtle.xyz'
+                width={200}
+                height={200}
+                className='object-contain opacity-70 hover:opacity-100 transition-opacity'
+              />
+            </Link>
+            <Link
+              href='https://cncf.io'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              <Image
+                src='/cncf.png'
+                alt='CNCF'
+                width={200}
+                height={200}
+                className='object-contain opacity-70 hover:opacity-100 transition-opacity'
+              />
+            </Link>
           </div>
         </div>
       </section>
@@ -158,13 +200,19 @@ export default function Home() {
 
           <div className='flex flex-col sm:flex-row items-center justify-center gap-8 sm:gap-12'>
             <div className='flex flex-col items-center text-center'>
-              <Image
-                src='/tech-exploration-lab.png'
-                alt='Tech Exploration Lab'
-                width={300}
-                height={300}
-                className='rounded-lg object-contain mb-3'
-              />
+              <Link
+                href='https://techexplorationlab.wisc.edu/'
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                <Image
+                  src='/tech-exploration-lab.png'
+                  alt='Tech Exploration Lab'
+                  width={300}
+                  height={300}
+                  className='rounded-lg object-contain mb-3'
+                />
+              </Link>
               <span className='text-lg font-semibold text-foreground'>
                 Tech Exploration Lab
               </span>
@@ -189,15 +237,12 @@ export default function Home() {
       </section>
 
       {/* Tracks Section */}
-      <section className='py-20 px-4 sm:px-6 lg:px-8'>
+      <section id='tracks' className='py-20 px-4 sm:px-6 lg:px-8'>
         <div className='max-w-7xl mx-auto'>
           <div className='text-center mb-16'>
             <h2 className='text-4xl md:text-5xl font-bold text-foreground mb-6'>
               Competition Tracks
             </h2>
-            <p className='text-xl text-muted-foreground max-w-3xl mx-auto'>
-              Choose your track and build something amazing in 24 hours
-            </p>
           </div>
 
           <div className='space-y-8'>
@@ -214,34 +259,39 @@ export default function Home() {
                         <h3 className='text-2xl font-bold text-card-foreground'>
                           Venture Track
                         </h3>
-                        <div className='flex items-center space-x-2'>
-                          <Badge
-                            variant='outline'
-                            className='text-sm font-semibold text-primary'
-                          >
-                            $?? Prize Pool
-                          </Badge>
-                        </div>
                       </div>
                     </div>
                   </div>
-                  <p className='text-muted-foreground mb-4'>
-                    This track is defined by startup-level speed and efficiency.
-                    You&apos;ll be provided with ample help and modern tools to
-                    supercharge your research and rapid development. Your
-                    24-hour challenge is to go from ideation to a working demo
-                    and a polished pitch-deck for your venture. The judges are
-                    experienced founders, investors, and tech leaders. They will
-                    critically evaluate your problem validation, the
-                    justification for your market-fit, and the ingenuity of your
-                    implemented solution. You must convince them your venture is
-                    investment-worthy.
+                  <p className='text-muted-foreground text-lg mb-4'>
+                    Build an MVP, demo it, and pitch its market fit.
                   </p>
-                  <Collapsible>
-                    <CollapsibleTrigger className='flex items-center justify-between w-full p-3 text-left text-primary hover:text-primary/80 transition-colors rounded-md hover:bg-primary/5'>
+                  <Collapsible
+                    open={isVentureOpen}
+                    onOpenChange={setIsVentureOpen}
+                  >
+                    <CollapsibleTrigger className='flex items-center justify-between w-full p-3 text-left text-primary hover:text-primary/80 transition-colors rounded-md hover:bg-primary/5 text-lg'>
                       <span>Learn More</span>
-                      <ChevronDown className='h-4 w-4 transition-transform duration-200 group-data-[state=open]:rotate-180' />
+                      <ChevronDown
+                        className={`h-4 w-4 transition-transform duration-200 ${
+                          isVentureOpen ? "rotate-180" : ""
+                        }`}
+                      />
                     </CollapsibleTrigger>
+                    <CollapsibleContent className='p-3 text-sm text-muted-foreground'>
+                      <p className='text-lg'>
+                        This track is defined by startup-level speed and
+                        efficiency. You&apos;ll be provided with ample help and
+                        modern tools to supercharge your research and rapid
+                        development. Your 24-hour challenge is to go from
+                        ideation to a working demo and a polished pitch-deck for
+                        your venture. The judges are experienced founders,
+                        investors, and tech leaders. They will critically
+                        evaluate your problem validation, the justification for
+                        your market-fit, and the ingenuity of your implemented
+                        solution. You must convince them your venture is
+                        investment-worthy.
+                      </p>
+                    </CollapsibleContent>
                   </Collapsible>
                 </CardContent>
               </Card>
@@ -258,26 +308,40 @@ export default function Home() {
                         <h3 className='text-2xl font-bold text-card-foreground'>
                           Blockchain Track
                         </h3>
-                        <div className='flex items-center space-x-2'>
-                          <Badge
-                            variant='outline'
-                            className='text-sm font-semibold text-primary'
-                          >
-                            $?? Prize Pool
-                          </Badge>
-                        </div>
                       </div>
                     </div>
                   </div>
-                  <p className='text-muted-foreground mb-4'>
-                    Develop decentralized applications, smart contracts, and
-                    blockchain solutions. Explore Web3 technologies.
+                  <p className='text-muted-foreground text-lg mb-4'>
+                    Create secure, transparent apps on the blockchain.
                   </p>
-                  <Collapsible>
-                    <CollapsibleTrigger className='flex items-center justify-between w-full p-3 text-left text-primary hover:text-primary/80 transition-colors rounded-md hover:bg-primary/5'>
+                  <Collapsible
+                    open={isBlockchainOpen}
+                    onOpenChange={setIsBlockchainOpen}
+                  >
+                    <CollapsibleTrigger className='flex items-center justify-between w-full p-3 text-left text-primary hover:text-primary/80 transition-colors rounded-md hover:bg-primary/5 text-lg'>
                       <span>Learn More</span>
-                      <ChevronDown className='h-4 w-4 transition-transform duration-200 group-data-[state=open]:rotate-180' />
+                      <ChevronDown
+                        className={`h-4 w-4 transition-transform duration-200 ${
+                          isBlockchainOpen ? "rotate-180" : ""
+                        }`}
+                      />
                     </CollapsibleTrigger>
+                    <CollapsibleContent className='p-3 text-lg text-muted-foreground'>
+                      <p>
+                        This track is designed for developers who are interested
+                        in building secure, transparent apps on the blockchain.
+                        You will be provided with ample help and modern tools to
+                        supercharge your research and rapid development. Your
+                        24-hour challenge is to go from ideation to a working
+                        demo and a polished pitch-deck for your blockchain
+                        application. The judges are experienced developers,
+                        blockchain experts, and tech leaders. They will
+                        critically evaluate your problem validation, the
+                        justification for your market-fit, and the ingenuity of
+                        your implemented solution. You must convince them your
+                        blockchain application is investment-worthy.
+                      </p>
+                    </CollapsibleContent>
                   </Collapsible>
                 </CardContent>
               </Card>
@@ -389,42 +453,19 @@ export default function Home() {
         <div className='max-w-7xl mx-auto'>
           <div className='flex flex-col md:flex-row justify-between items-center'>
             <div className='flex items-center space-x-3 mb-4 md:mb-0'>
-              <Image
-                src='/BadgerBlockchainLogo.png'
-                alt='Badger Blockchain'
-                width={32}
-                height={32}
-                className='rounded-lg'
-              />
               <span className='text-lg font-bold text-foreground'>
                 BUILD Fest 2025
               </span>
-            </div>
-            <div className='flex space-x-6'>
+              <span className='text-muted-foreground'>•</span>
               <Link
-                href='#'
-                className='text-muted-foreground hover:text-foreground transition-colors'
+                href='https://techexplorationlab.wisc.edu/'
+                target='_blank'
+                rel='noopener noreferrer'
+                className='text-lg font-bold text-muted-foreground hover:text-foreground transition-colors underline'
               >
-                Privacy
-              </Link>
-              <Link
-                href='#'
-                className='text-muted-foreground hover:text-foreground transition-colors'
-              >
-                Terms
-              </Link>
-              <Link
-                href='#'
-                className='text-muted-foreground hover:text-foreground transition-colors'
-              >
-                Contact
+                Tech Exploration Lab
               </Link>
             </div>
-          </div>
-          <div className='mt-8 pt-8 border-t border-border text-center'>
-            <p className='text-muted-foreground'>
-              © 2025 BUILD Fest. All rights reserved.
-            </p>
           </div>
         </div>
       </footer>
