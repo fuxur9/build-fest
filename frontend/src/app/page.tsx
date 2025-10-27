@@ -1,30 +1,11 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
-import {
-  Calendar,
-  MapPin,
-  Users,
-  Trophy,
-  Code,
-  Zap,
-  ArrowRight,
-  ChevronDown,
-} from "lucide-react";
+import { Calendar, MapPin, ArrowRight } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import {
-  Collapsible,
-  CollapsibleTrigger,
-  CollapsibleContent,
-} from "@/components/ui/collapsible";
 
 export default function Home() {
-  const [isVentureOpen, setIsVentureOpen] = useState(false);
-  const [isBlockchainOpen, setIsBlockchainOpen] = useState(false);
-
   return (
     <div className='min-h-screen bg-gradient-to-br from-background via-primary/10 to-background'>
       {/* Hero Section */}
@@ -42,25 +23,15 @@ export default function Home() {
             </p>
           </div>
 
-          <div className='flex flex-col sm:flex-row gap-4 justify-center mb-16'>
-            <Button asChild size='lg' className='text-lg px-8 py-6'>
+          <div className='flex justify-center mb-16'>
+            <Button asChild size='lg' className='text-xl px-12 py-6'>
               <Link
                 href='https://forms.gle/V41KWM2T9SjHj1cG9'
                 target='_blank'
                 rel='noopener noreferrer'
               >
                 Register Now
-                <ArrowRight className='ml-2 w-5 h-5' />
-              </Link>
-            </Button>
-            <Button
-              variant='outline'
-              size='lg'
-              className='text-lg px-8 py-6'
-              asChild
-            >
-              <Link href='https://techexplorationlab.wisc.edu/'>
-                Learn More
+                <ArrowRight className='ml-2 w-6 h-6' />
               </Link>
             </Button>
           </div>
@@ -74,9 +45,6 @@ export default function Home() {
                   Location
                 </h3>
                 <p className='text-xl text-muted-foreground'>Morgridge Hall</p>
-                {/* <p className='text-muted-foreground'>
-                  Hello, World! Auditorium
-                </p> */}
               </CardContent>
             </Card>
             <Card className='bg-card/50 backdrop-blur-md border border-border hover:bg-card/60 transition-colors'>
@@ -86,7 +54,7 @@ export default function Home() {
                   Date
                 </h3>
                 <p className='text-xl text-muted-foreground'>
-                  November 15-16, 2025
+                  12:30 PM Nov 15 - 6:00 PM Nov 16
                 </p>
               </CardContent>
             </Card>
@@ -130,19 +98,6 @@ export default function Home() {
               <Image
                 src='/college-xyz.png'
                 alt='College.xyz'
-                width={200}
-                height={200}
-                className='object-contain opacity-70 hover:opacity-100 transition-opacity'
-              />
-            </Link>
-            <Link
-              href='https://sui.io'
-              target='_blank'
-              rel='noopener noreferrer'
-            >
-              <Image
-                src='/sui-text.png'
-                alt='Sui'
                 width={200}
                 height={200}
                 className='object-contain opacity-70 hover:opacity-100 transition-opacity'
@@ -236,6 +191,162 @@ export default function Home() {
         </div>
       </section>
 
+      {/* About Section */}
+      <section id='about' className='py-20 px-4 sm:px-6 lg:px-8 bg-muted/20'>
+        <div className='max-w-7xl mx-auto'>
+          <div className='text-center mb-16'>
+            <h2 className='text-4xl md:text-5xl font-bold text-foreground mb-6'>
+              About Badger Build Fest
+            </h2>
+            <p className='text-xl text-muted-foreground max-w-3xl mx-auto mb-4'>
+              Badger Build Fest is a 24-hour hackathon where participants choose
+              between Venture and Blockchain tracks to build the next big thing.
+            </p>
+            <p className='text-xl text-muted-foreground max-w-3xl mx-auto mb-4'>
+              Whether you&apos;re an experienced developer or new to
+              programming, our event provides hands-on workshops, AI tools, and
+              expert mentors to help you succeed.
+            </p>
+            <p className='text-xl text-muted-foreground max-w-3xl mx-auto'>
+              From ideation to a polished pitch deck, you&apos;ll have access to
+              everything needed to create a compelling demo and present your
+              vision to experienced judges. Join us at Morgridge Hall for an
+              intensive weekend of innovation, collaboration, and building the
+              future.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Schedule Section */}
+      <section className='py-20 px-4 sm:px-6 lg:px-8'>
+        <div className='max-w-6xl mx-auto'>
+          <div className='text-center mb-16'>
+            <h2 className='text-5xl md:text-6xl font-bold text-foreground mb-6'>
+              Event Schedule
+            </h2>
+          </div>
+
+          <div className='grid grid-cols-1 lg:grid-cols-2 gap-8'>
+            {/* Saturday */}
+            <Card className='bg-card/50 backdrop-blur-md border border-border hover:bg-card/60 transition-colors'>
+              <CardContent className='p-6'>
+                <h3 className='text-3xl font-bold text-card-foreground mb-6 text-center'>
+                  Saturday, November 15th
+                </h3>
+                <div className='space-y-4'>
+                  <div className='flex items-start space-x-3'>
+                    <div className='w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0'></div>
+                    <div>
+                      <p className='text-lg font-semibold text-card-foreground'>
+                        12:30 PM
+                      </p>
+                      <p className='text-lg text-muted-foreground'>
+                        Hackathon Kick-off
+                      </p>
+                      <p className='text-base text-muted-foreground'>
+                        Location: Hello World, Morgridge Hall
+                      </p>
+                    </div>
+                  </div>
+                  <div className='flex items-start space-x-3'>
+                    <div className='w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0'></div>
+                    <div>
+                      <p className='text-lg font-semibold text-card-foreground'>
+                        1:30 PM
+                      </p>
+                      <p className='text-lg text-muted-foreground'>
+                        Hacking Begins
+                      </p>
+                    </div>
+                  </div>
+                  <div className='flex items-start space-x-3'>
+                    <div className='w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0'></div>
+                    <div>
+                      <p className='text-lg font-semibold text-card-foreground'>
+                        1:30 PM – 9:00 PM
+                      </p>
+                      <p className='text-lg text-muted-foreground'>
+                        Dedicated Hacking Space & Workshops
+                      </p>
+                      <p className='text-base text-muted-foreground'>
+                        Location: Morgridge Hall
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Sunday */}
+            <Card className='bg-card/50 backdrop-blur-md border border-border hover:bg-card/60 transition-colors'>
+              <CardContent className='p-6'>
+                <h3 className='text-3xl font-bold text-card-foreground mb-6 text-center'>
+                  Sunday, November 16th
+                </h3>
+                <div className='space-y-4'>
+                  <div className='flex items-start space-x-3'>
+                    <div className='w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0'></div>
+                    <div>
+                      <p className='text-lg font-semibold text-card-foreground'>
+                        1:30 PM
+                      </p>
+                      <p className='text-lg text-muted-foreground'>
+                        Hacking Ends & Projects Must Be Submitted
+                      </p>
+                    </div>
+                  </div>
+                  <div className='flex items-start space-x-3'>
+                    <div className='w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0'></div>
+                    <div>
+                      <p className='text-lg font-semibold text-card-foreground'>
+                        1:30 PM – 2:00 PM
+                      </p>
+                      <p className='text-lg text-muted-foreground'>
+                        Team Setup for Project Showcase
+                      </p>
+                    </div>
+                  </div>
+                  <div className='flex items-start space-x-3'>
+                    <div className='w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0'></div>
+                    <div>
+                      <p className='text-lg font-semibold text-card-foreground'>
+                        2:00 PM – 4:00 PM
+                      </p>
+                      <p className='text-lg text-muted-foreground'>
+                        Project Showcase & Judging
+                      </p>
+                    </div>
+                  </div>
+                  <div className='flex items-start space-x-3'>
+                    <div className='w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0'></div>
+                    <div>
+                      <p className='text-lg font-semibold text-card-foreground'>
+                        4:00 PM – 5:00 PM
+                      </p>
+                      <p className='text-lg text-muted-foreground'>
+                        Judge Deliberation & Final Decisions
+                      </p>
+                    </div>
+                  </div>
+                  <div className='flex items-start space-x-3'>
+                    <div className='w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0'></div>
+                    <div>
+                      <p className='text-lg font-semibold text-card-foreground'>
+                        5:00 PM – 6:00 PM
+                      </p>
+                      <p className='text-lg text-muted-foreground'>
+                        Award Ceremony & Closing Remarks
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* Tracks Section */}
       <section id='tracks' className='py-20 px-4 sm:px-6 lg:px-8'>
         <div className='max-w-7xl mx-auto'>
@@ -248,169 +359,134 @@ export default function Home() {
           <div className='space-y-8'>
             <div className='grid grid-cols-1 lg:grid-cols-2 gap-8'>
               {/* Venture Track */}
-              <Card className='bg-gradient-to-br from-primary/20 to-accent/20 backdrop-blur-md border border-primary/30'>
-                <CardContent className='p-6'>
-                  <div className='flex items-center justify-between mb-4'>
-                    <div className='flex items-center space-x-4'>
-                      <div className='w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center'>
-                        <span className='text-2xl'>🚀</span>
-                      </div>
-                      <div>
-                        <h3 className='text-2xl font-bold text-card-foreground'>
-                          Venture Track
-                        </h3>
-                      </div>
+              <Card className='bg-gradient-to-br from-primary/10 to-accent/10 backdrop-blur-md border border-primary/20 hover:border-primary/40 transition-all duration-300'>
+                <CardContent className='p-8'>
+                  {/* Header */}
+                  <div className='text-center mb-8'>
+                    <h3 className='text-3xl font-bold text-card-foreground mb-3'>
+                      Venture Track
+                    </h3>
+                    <p className='text-xl text-foreground font-semibold'>
+                      - Build an MVP, demo it, and pitch its market fit -
+                    </p>
+                  </div>
+
+                  {/* Separator Line */}
+                  <div className='w-full h-px bg-primary/30 mb-8'></div>
+
+                  {/* Content */}
+                  <div className='space-y-6'>
+                    <div>
+                      <h4 className='font-semibold text-card-foreground mb-2'>
+                        What You&apos;ll Build
+                      </h4>
+                      <p className='text-card-foreground'>
+                        This track is defined by startup-level speed, not coding
+                        expertise. Your 24-hour challenge is to go from ideation
+                        to a functional demo and a polished, investment-worthy
+                        pitch deck.
+                      </p>
+                    </div>
+
+                    <div>
+                      <h4 className='font-semibold text-card-foreground mb-2'>
+                        Beginner-Friendly
+                      </h4>
+                      <p className='text-card-foreground'>
+                        You do not need to be an experienced programmer. Your
+                        pitch, problem validation, and market-fit justification
+                        will be weighted much more heavily than the technical
+                        implementation.
+                      </p>
+                    </div>
+
+                    <div>
+                      <h4 className='font-semibold text-card-foreground mb-3'>
+                        Support & Resources
+                      </h4>
+                      <p className='text-card-foreground mb-3'>
+                        We&apos;ll supercharge your process with hands-on
+                        support. You will have access to:
+                      </p>
+                      <ul className='text-card-foreground space-y-2 ml-4'>
+                        <li>
+                          • Workshops on Figma, UI design and AI tools (like
+                          Cursor) to help you build a prototype you can touch
+                          and play with.
+                        </li>
+                        <li>
+                          • On-site mentors, including experienced investors and
+                          founders, to help guide your pitch deck and make sure
+                          your vision is crystal clear.
+                        </li>
+                      </ul>
+                    </div>
+
+                    <div>
+                      <h4 className='font-semibold text-black mb-2'>
+                        Judging Panel
+                      </h4>
+                      <p className='text-black'>
+                        The judges are experienced founders, VCs, and tech
+                        leaders. Your job is to convince them your venture is
+                        the one to fund.
+                      </p>
                     </div>
                   </div>
-                  <p className='text-muted-foreground text-lg mb-4'>
-                    Build an MVP, demo it, and pitch its market fit.
-                  </p>
-                  <Collapsible
-                    open={isVentureOpen}
-                    onOpenChange={setIsVentureOpen}
-                  >
-                    <CollapsibleTrigger className='flex items-center justify-between w-full p-3 text-left text-primary hover:text-primary/80 transition-colors rounded-md hover:bg-primary/5 text-lg'>
-                      <span>Learn More</span>
-                      <ChevronDown
-                        className={`h-4 w-4 transition-transform duration-200 ${
-                          isVentureOpen ? "rotate-180" : ""
-                        }`}
-                      />
-                    </CollapsibleTrigger>
-                    <CollapsibleContent className='p-3 text-sm text-muted-foreground'>
-                      <p className='text-lg'>
-                        This track is defined by startup-level speed and
-                        efficiency. You&apos;ll be provided with ample help and
-                        modern tools to supercharge your research and rapid
-                        development. Your 24-hour challenge is to go from
-                        ideation to a working demo and a polished pitch-deck for
-                        your venture. The judges are experienced founders,
-                        investors, and tech leaders. They will critically
-                        evaluate your problem validation, the justification for
-                        your market-fit, and the ingenuity of your implemented
-                        solution. You must convince them your venture is
-                        investment-worthy.
-                      </p>
-                    </CollapsibleContent>
-                  </Collapsible>
                 </CardContent>
               </Card>
 
               {/* Blockchain Track */}
-              <Card className='bg-gradient-to-br from-primary/20 to-accent/20 backdrop-blur-md border border-primary/30'>
-                <CardContent className='p-6'>
-                  <div className='flex items-center justify-between mb-4'>
-                    <div className='flex items-center space-x-4'>
-                      <div className='w-12 h-12 bg-secondary/20 rounded-full flex items-center justify-center'>
-                        <span className='text-2xl'>⛓️</span>
-                      </div>
-                      <div>
-                        <h3 className='text-2xl font-bold text-card-foreground'>
-                          Blockchain Track
-                        </h3>
-                      </div>
-                    </div>
+              <Card className='bg-gradient-to-br from-primary/10 to-accent/10 backdrop-blur-md border border-primary/20 hover:border-primary/40 transition-all duration-300'>
+                <CardContent className='p-8'>
+                  {/* Header */}
+                  <div className='text-center mb-8'>
+                    <h3 className='text-3xl font-bold text-card-foreground mb-3'>
+                      Blockchain Track
+                    </h3>
+                    <p className='text-xl text-foreground font-semibold'>
+                      - Create secure, transparent apps on the blockchain -
+                    </p>
                   </div>
-                  <p className='text-muted-foreground text-lg mb-4'>
-                    Create secure, transparent apps on the blockchain.
-                  </p>
-                  <Collapsible
-                    open={isBlockchainOpen}
-                    onOpenChange={setIsBlockchainOpen}
-                  >
-                    <CollapsibleTrigger className='flex items-center justify-between w-full p-3 text-left text-primary hover:text-primary/80 transition-colors rounded-md hover:bg-primary/5 text-lg'>
-                      <span>Learn More</span>
-                      <ChevronDown
-                        className={`h-4 w-4 transition-transform duration-200 ${
-                          isBlockchainOpen ? "rotate-180" : ""
-                        }`}
-                      />
-                    </CollapsibleTrigger>
-                    <CollapsibleContent className='p-3 text-lg text-muted-foreground'>
-                      <p>
+
+                  {/* Separator Line */}
+                  <div className='w-full h-px bg-primary/30 mb-8'></div>
+
+                  {/* Content */}
+                  <div className='space-y-6'>
+                    <div>
+                      <h4 className='font-semibold text-card-foreground mb-2'>
+                        What You&apos;ll Build
+                      </h4>
+                      <p className='text-card-foreground'>
                         This track is designed for developers who are interested
                         in building secure, transparent apps on the blockchain.
                         You will be provided with ample help and modern tools to
-                        supercharge your research and rapid development. Your
-                        24-hour challenge is to go from ideation to a working
-                        demo and a polished pitch-deck for your blockchain
-                        application. The judges are experienced developers,
-                        blockchain experts, and tech leaders. They will
-                        critically evaluate your problem validation, the
-                        justification for your market-fit, and the ingenuity of
-                        your implemented solution. You must convince them your
-                        blockchain application is investment-worthy.
+                        supercharge your research and rapid development.
                       </p>
-                    </CollapsibleContent>
-                  </Collapsible>
+                    </div>
+
+                    <div>
+                      <h4 className='font-semibold text-card-foreground mb-2'>
+                        24-Hour Challenge
+                      </h4>
+                      <p className='text-card-foreground'>
+                        Your 24-hour challenge is to solve a problem you care
+                        about and build a secure, transparent app on the
+                        blockchain.
+                      </p>
+                    </div>
+
+                    <div>
+                      <h4 className='font-semibold text-black mb-2'>
+                        Judging Criteria
+                      </h4>
+                      <p className='text-black'>TBA</p>
+                    </div>
+                  </div>
                 </CardContent>
               </Card>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* About Section */}
-      <section id='about' className='py-20 px-4 sm:px-6 lg:px-8 bg-muted/20'>
-        <div className='max-w-7xl mx-auto'>
-          <div className='text-center mb-16'>
-            <h2 className='text-4xl md:text-5xl font-bold text-foreground mb-6'>
-              About BUILD Fest
-            </h2>
-            <p className='text-xl text-muted-foreground max-w-3xl mx-auto'>
-              A 24-hour intensive coding event where developers, designers, and
-              blockchain enthusiasts come together to build innovative
-              solutions.
-            </p>
-          </div>
-
-          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8'>
-            <Card className='bg-card/30 backdrop-blur-md border border-border hover:bg-card/40 transition-colors'>
-              <CardContent className='p-6'>
-                <Code className='w-12 h-12 text-primary mb-4' />
-                <h3 className='text-xl font-semibold text-card-foreground mb-3'>
-                  Build
-                </h3>
-                <p className='text-muted-foreground'>
-                  Create innovative blockchain applications using cutting-edge
-                  technologies.
-                </p>
-              </CardContent>
-            </Card>
-            <Card className='bg-card/30 backdrop-blur-md border border-border hover:bg-card/40 transition-colors'>
-              <CardContent className='p-6'>
-                <Users className='w-12 h-12 text-primary mb-4' />
-                <h3 className='text-xl font-semibold text-card-foreground mb-3'>
-                  Collaborate
-                </h3>
-                <p className='text-muted-foreground'>
-                  Work with talented developers and form lasting connections.
-                </p>
-              </CardContent>
-            </Card>
-            <Card className='bg-card/30 backdrop-blur-md border border-border hover:bg-card/40 transition-colors'>
-              <CardContent className='p-6'>
-                <Zap className='w-12 h-12 text-primary mb-4' />
-                <h3 className='text-xl font-semibold text-card-foreground mb-3'>
-                  Innovate
-                </h3>
-                <p className='text-muted-foreground'>
-                  Push the boundaries of what&apos;s possible in decentralized
-                  technology.
-                </p>
-              </CardContent>
-            </Card>
-            <Card className='bg-card/30 backdrop-blur-md border border-border hover:bg-card/40 transition-colors'>
-              <CardContent className='p-6'>
-                <Trophy className='w-12 h-12 text-primary mb-4' />
-                <h3 className='text-xl font-semibold text-card-foreground mb-3'>
-                  Compete
-                </h3>
-                <p className='text-muted-foreground'>
-                  Showcase your skills and win amazing prizes.
-                </p>
-              </CardContent>
-            </Card>
           </div>
         </div>
       </section>
@@ -421,10 +497,6 @@ export default function Home() {
           <h2 className='text-4xl md:text-5xl font-bold text-foreground mb-6'>
             Ready to Build the Future?
           </h2>
-          <p className='text-xl text-muted-foreground mb-8'>
-            Join hundreds of developers in the ultimate blockchain hackathon
-            experience.
-          </p>
           <div className='flex flex-col sm:flex-row gap-4 justify-center'>
             <Button size='lg' className='text-lg px-8 py-6' asChild>
               <Link
@@ -442,7 +514,13 @@ export default function Home() {
               className='text-lg px-8 py-6'
               asChild
             >
-              <Link href='#about'>Learn More</Link>
+              <Link
+                href='https://techexplorationlab.wisc.edu/'
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                More About TEL
+              </Link>
             </Button>
           </div>
         </div>
@@ -454,7 +532,7 @@ export default function Home() {
           <div className='flex flex-col md:flex-row justify-between items-center'>
             <div className='flex items-center space-x-3 mb-4 md:mb-0'>
               <span className='text-lg font-bold text-foreground'>
-                BUILD Fest 2025
+                Badger Build Fest 2025
               </span>
               <span className='text-muted-foreground'>•</span>
               <Link
@@ -464,6 +542,15 @@ export default function Home() {
                 className='text-lg font-bold text-muted-foreground hover:text-foreground transition-colors underline'
               >
                 Tech Exploration Lab
+              </Link>
+              <span className='text-muted-foreground'>•</span>
+              <Link
+                href=''
+                target='_blank'
+                rel='noopener noreferrer'
+                className='text-lg font-bold text-muted-foreground hover:text-foreground transition-colors underline'
+              >
+                Badger Blockchain
               </Link>
             </div>
           </div>

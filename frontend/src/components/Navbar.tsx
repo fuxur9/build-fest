@@ -8,7 +8,9 @@ export default function Navbar() {
         <div className='flex justify-between items-center h-16'>
           {/* Logo */}
           <Link href='/' className='flex items-center'>
-            <span className='text-xl font-bold text-black'>BUILD Fest</span>
+            <span className='text-xl font-bold text-black'>
+              Badger Build Fest
+            </span>
           </Link>
 
           {/* Navigation */}

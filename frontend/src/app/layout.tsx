@@ -10,8 +10,9 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "BUILD Fest",
-  description: "BUILD Fest held by Tech Exploration Lab and Badger Blockchain",
+  title: "Badger Build Fest",
+  description:
+    "Badger Build Fest held by Tech Exploration Lab and Badger Blockchain",
 };
 
 export default function RootLayout({

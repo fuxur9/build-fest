@@ -1,3 +1,3 @@
-# BUILD Fest Website
+# Badger Build Fest Website
 
-# BUILD Fest
+# Badger Build Fest
