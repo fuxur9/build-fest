@@ -22,16 +22,22 @@ export default function Navbar() {
               SPONSORS
             </Link>
             <Link
-              href='#tracks'
-              className='text-black font-bold hover:text-gray-600 transition-colors'
-            >
-              TRACKS
-            </Link>
-            <Link
               href='#about'
               className='text-black font-bold hover:text-gray-600 transition-colors'
             >
               ABOUT
+            </Link>
+            <Link
+              href='#schedule'
+              className='text-black font-bold hover:text-gray-600 transition-colors'
+            >
+              SCHEDULE
+            </Link>
+            <Link
+              href='#tracks'
+              className='text-black font-bold hover:text-gray-600 transition-colors'
+            >
+              TRACKS
             </Link>
 
             <Button
