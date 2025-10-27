@@ -11,19 +11,19 @@ export default function Home() {
       {/* Hero Section */}
       <section className='pt-32 pb-20 px-4 sm:px-6 lg:px-8'>
         <div className='max-w-8xl mx-auto text-center'>
-          <div className='mb-8'>
-            <div className='flex items-center justify-center gap-8 mb-8'>
-              <h1 className='text-6xl md:text-8xl lg:text-9xl font-bold text-foreground font-space-grotesk'>
-                BUILD Fest 2025
+          <div className='mb-16'>
+            <div className='flex items-center justify-center gap-8 mb-12'>
+              <h1 className='text-6xl md:text-8xl lg:text-8xl font-bold text-foreground font-space-grotesk'>
+                Badger Build Fest 2025
               </h1>
             </div>
 
-            <p className='text-2xl md:text-3xl text-muted-foreground mb-8 max-w-3xl mx-auto'>
+            {/* <p className='text-2xl md:text-3xl text-muted-foreground mb-8 max-w-3xl mx-auto'>
               Badger • Unleashed • Innovate • Learn • Deliver
-            </p>
+            </p> */}
           </div>
 
-          <div className='flex justify-center mb-16'>
+          <div className='flex justify-center mb-20'>
             <Button asChild size='lg' className='text-xl px-12 py-6'>
               <Link
                 href='https://forms.gle/V41KWM2T9SjHj1cG9'
@@ -565,13 +565,6 @@ export default function Home() {
                 className='text-lg font-bold text-muted-foreground hover:text-foreground transition-colors underline'
               >
                 Badger Blockchain
-              </Link>
-              <span className='text-muted-foreground'>•</span>
-              <Link
-                href='mailto:sandra.bradley@wisc.edu?subject=Sponsorship Inquiry - Badger Build Fest 2025'
-                className='text-lg font-bold text-muted-foreground hover:text-foreground transition-colors underline'
-              >
-                Open to more sponsors!
               </Link>
             </div>
           </div>
