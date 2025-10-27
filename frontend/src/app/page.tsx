@@ -91,6 +91,19 @@ export default function Home() {
           {/* Other Sponsors - Single Row */}
           <div className='flex flex-wrap justify-center items-center gap-12'>
             <Link
+              href='https://turtle.xyz'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              <Image
+                src='/turtle-xyz-removebg-preview.png'
+                alt='Turtle.xyz'
+                width={200}
+                height={200}
+                className='object-contain opacity-70 hover:opacity-100 transition-opacity'
+              />
+            </Link>
+            <Link
               href='https://college.xyz'
               target='_blank'
               rel='noopener noreferrer'
@@ -116,26 +129,14 @@ export default function Home() {
                 className='object-contain opacity-70 hover:opacity-100 transition-opacity'
               />
             </Link>
-            <Link
-              href='https://turtle.xyz'
-              target='_blank'
-              rel='noopener noreferrer'
-            >
-              <Image
-                src='/turtle-xyz.png'
-                alt='Turtle.xyz'
-                width={200}
-                height={200}
-                className='object-contain opacity-70 hover:opacity-100 transition-opacity'
-              />
-            </Link>
+
             <Link
               href='https://cncf.io'
               target='_blank'
               rel='noopener noreferrer'
             >
               <Image
-                src='/cncf.png'
+                src='/CNCF-Picsart-BackgroundRemover.png'
                 alt='CNCF'
                 width={200}
                 height={200}
@@ -199,13 +200,14 @@ export default function Home() {
               About Badger Build Fest
             </h2>
             <p className='text-xl text-muted-foreground max-w-3xl mx-auto mb-4'>
-              Badger Build Fest is a 24-hour hackathon where participants choose
-              between Venture and Blockchain tracks to build the next big thing.
+              Badger Build Fest is a 24-hour hackathon half-hackathon half
+              pitch-competition where participants choose between Venture and
+              Blockchain tracks to build the next big thing.
             </p>
             <p className='text-xl text-muted-foreground max-w-3xl mx-auto mb-4'>
-              Whether you&apos;re an experienced developer or new to
-              programming, our event provides hands-on workshops, AI tools, and
-              expert mentors to help you succeed.
+              Whether you&apos;re a developer, designer, entrepreneur, or just
+              want to try yourself at something new, our event provides hands-on
+              workshops, AI tools, and expert mentors to help you succeed.
             </p>
             <p className='text-xl text-muted-foreground max-w-3xl mx-auto'>
               From ideation to a polished pitch deck, you&apos;ll have access to
@@ -245,7 +247,7 @@ export default function Home() {
                         Hackathon Kick-off
                       </p>
                       <p className='text-base text-muted-foreground'>
-                        Location: Hello World, Morgridge Hall
+                        Location: Hello World!, Morgridge Hall
                       </p>
                     </div>
                   </div>
@@ -337,6 +339,9 @@ export default function Home() {
                       </p>
                       <p className='text-lg text-muted-foreground'>
                         Award Ceremony & Closing Remarks
+                      </p>
+                      <p className='text-base text-muted-foreground'>
+                        Location: Hello World!, Morgridge Hall
                       </p>
                     </div>
                   </div>
@@ -493,8 +498,8 @@ export default function Home() {
 
       {/* CTA Section */}
       <section className='py-20 px-4 sm:px-6 lg:px-8'>
-        <div className='max-w-4xl mx-auto text-center'>
-          <h2 className='text-4xl md:text-5xl font-bold text-foreground mb-6'>
+        <div className='max-w-4xl mx-auto'>
+          <h2 className='text-4xl md:text-5xl font-bold text-foreground mb-6 text-center'>
             Ready to Build the Future?
           </h2>
           <div className='flex flex-col sm:flex-row gap-4 justify-center'>
@@ -515,11 +520,11 @@ export default function Home() {
               asChild
             >
               <Link
-                href='https://techexplorationlab.wisc.edu/'
+                href='https://discord.com/invite/ubAHakcM33.'
                 target='_blank'
                 rel='noopener noreferrer'
               >
-                More About TEL
+                Contact TEL
               </Link>
             </Button>
           </div>
@@ -545,12 +550,28 @@ export default function Home() {
               </Link>
               <span className='text-muted-foreground'>•</span>
               <Link
-                href=''
+                href='https://discord.com/invite/ubAHakcM33.'
+                target='_blank'
+                rel='noopener noreferrer'
+                className='text-lg font-bold text-muted-foreground hover:text-foreground transition-colors underline'
+              >
+                TEL Discord Server (For any questions)
+              </Link>
+              <span className='text-muted-foreground'>•</span>
+              <Link
+                href='https://www.instagram.com/badgerblockchain/'
                 target='_blank'
                 rel='noopener noreferrer'
                 className='text-lg font-bold text-muted-foreground hover:text-foreground transition-colors underline'
               >
                 Badger Blockchain
+              </Link>
+              <span className='text-muted-foreground'>•</span>
+              <Link
+                href='mailto:sandra.bradley@wisc.edu?subject=Sponsorship Inquiry - Badger Build Fest 2025'
+                className='text-lg font-bold text-muted-foreground hover:text-foreground transition-colors underline'
+              >
+                Open to more sponsors!
               </Link>
             </div>
           </div>
