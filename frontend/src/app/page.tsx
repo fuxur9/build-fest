@@ -199,6 +199,59 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Partner Organizations */}
+      <section className='py-20 px-4 sm:px-6 lg:px-8'>
+        <div className='max-w-4xl mx-auto text-center'>
+          <h2 className='text-3xl md:text-4xl font-bold text-foreground mb-8'>
+            Partner Organizations
+          </h2>
+
+          <div className='flex flex-col sm:flex-row items-center justify-center gap-8 sm:gap-12'>
+            <div className='flex flex-col items-center text-center'>
+              <Link
+                href='https://linktr.ee/cursoruwmadison?utm_source=linktree_profile_share&ltsid=25570ce8-6567-4c7b-a28c-2bfd3de83f4f'
+                target='_blank'
+                rel='noopener noreferrer'
+                className='transition-transform hover:scale-105'
+              >
+                <Image
+                  src='/cursor-madison-logo.png'
+                  alt='Cursor @ UW-Madison'
+                  width={200}
+                  height={200}
+                  className='rounded-lg object-contain mb-3'
+                />
+              </Link>
+              <span className='text-lg font-semibold text-foreground'>
+                Cursor @ UW-Madison
+              </span>
+            </div>
+
+            {/* <span className='text-3xl font-bold text-primary'>×</span> */}
+
+            <div className='flex flex-col items-center text-center'>
+              <Link
+                href='http://transcenduw.com/'
+                target='_blank'
+                rel='noopener noreferrer'
+                className='transition-transform hover:scale-105'
+              >
+                <Image
+                  src='/transcend.png'
+                  alt='Transcend'
+                  width={200}
+                  height={200}
+                  className='rounded-lg object-contain mb-3'
+                />
+              </Link>
+              <span className='text-lg font-semibold text-foreground'>
+                Transcend
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* About Section */}
       <section id='about' className='py-20 px-4 sm:px-6 lg:px-8 bg-muted/20'>
         <div className='max-w-7xl mx-auto'>
