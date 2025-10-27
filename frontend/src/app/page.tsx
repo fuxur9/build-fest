@@ -238,14 +238,14 @@ export default function Home() {
               >
                 <Image
                   src='/transcend.png'
-                  alt='Transcend'
+                  alt='Transcend UW'
                   width={200}
                   height={200}
                   className='rounded-lg object-contain mb-3'
                 />
               </Link>
               <span className='text-lg font-semibold text-foreground'>
-                Transcend
+                Transcend UW
               </span>
             </div>
           </div>
