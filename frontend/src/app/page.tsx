@@ -177,13 +177,20 @@ export default function Home() {
             <span className='text-3xl font-bold text-primary'>×</span>
 
             <div className='flex flex-col items-center text-center'>
-              <Image
-                src='/badger-blockchain.png'
-                alt='Badger Blockchain'
-                width={500}
-                height={271}
-                className='rounded-lg object-contain mb-3'
-              />
+              <Link
+                href='https://www.instagram.com/badgerblockchain/'
+                target='_blank'
+                rel='noopener noreferrer'
+                className='transition-transform hover:scale-105'
+              >
+                <Image
+                  src='/badger-blockchain.png'
+                  alt='Badger Blockchain'
+                  width={500}
+                  height={271}
+                  className='rounded-lg object-contain mb-3'
+                />
+              </Link>
               <span className='text-lg font-semibold text-foreground'>
                 Badger Blockchain
               </span>
@@ -200,7 +207,7 @@ export default function Home() {
               About Badger Build Fest
             </h2>
             <p className='text-xl text-muted-foreground max-w-3xl mx-auto mb-4'>
-              Badger Build Fest is a 24-hour hackathon half-hackathon half
+              Badger Build Fest is a 24-hour half-hackathon half
               pitch-competition where participants choose between Venture and
               Blockchain tracks to build the next big thing.
             </p>
@@ -410,8 +417,8 @@ export default function Home() {
                         Support & Resources
                       </h4>
                       <p className='text-card-foreground mb-3'>
-                        We&apos;ll supercharge your process with hands-on
-                        support. You will have access to:
+                        To help you build a prototype you can use to showcase
+                        your idea, you will have access to:
                       </p>
                       <ul className='text-card-foreground space-y-2 ml-4'>
                         <li>
