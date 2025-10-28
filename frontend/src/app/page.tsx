@@ -215,15 +215,15 @@ export default function Home() {
                 className='transition-transform hover:scale-105'
               >
                 <Image
-                  src='/cursor-madison-logo.png'
-                  alt='Cursor @ UW-Madison'
+                  src='/CursorAtUWLogo-modified.png'
+                  alt='Cursor at UW-Madison'
                   width={200}
                   height={200}
                   className='rounded-lg object-contain mb-3'
                 />
               </Link>
               <span className='text-lg font-semibold text-foreground'>
-                Cursor @ UW-Madison
+                Cursor at UW-Madison
               </span>
             </div>
 
