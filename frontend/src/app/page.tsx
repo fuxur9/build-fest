@@ -227,8 +227,6 @@ export default function Home() {
               </span>
             </div>
 
-            {/* <span className='text-3xl font-bold text-primary'>×</span> */}
-
             <div className='flex flex-col items-center text-center'>
               <Link
                 href='http://transcenduw.com/'
@@ -246,6 +244,28 @@ export default function Home() {
               </Link>
               <span className='text-lg font-semibold text-foreground'>
                 Transcend UW
+              </span>
+            </div>
+
+            <div className='flex flex-col items-center text-center'>
+              <Link
+                href='https://www.thewhitepaperreading.club/'
+                target='_blank'
+                rel='noopener noreferrer'
+                className='transition-transform hover:scale-105'
+              >
+                <div className='transition-transform hover:scale-105'>
+                  <Image
+                    src='/wprc.jpeg'
+                    alt='White Paper Reading Club'
+                    width={200}
+                    height={200}
+                    className='rounded-lg object-contain mb-3'
+                  />
+                </div>
+              </Link>
+              <span className='text-lg font-semibold text-foreground'>
+                White Paper Reading Club
               </span>
             </div>
           </div>
