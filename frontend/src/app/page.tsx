@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Calendar, MapPin, ArrowRight } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import Schedule from "@/components/Schedule";
 
 export default function Home() {
   return (
@@ -301,136 +302,7 @@ export default function Home() {
       </section>
 
       {/* Schedule Section */}
-      <section id='schedule' className='py-20 px-4 sm:px-6 lg:px-8'>
-        <div className='max-w-6xl mx-auto'>
-          <div className='text-center mb-16'>
-            <h2 className='text-5xl md:text-6xl font-bold text-foreground mb-6'>
-              Event Schedule
-            </h2>
-          </div>
-
-          <div className='grid grid-cols-1 lg:grid-cols-2 gap-8'>
-            {/* Saturday */}
-            <Card className='bg-card/50 backdrop-blur-md border border-border hover:bg-card/60 transition-colors'>
-              <CardContent className='p-6'>
-                <h3 className='text-3xl font-bold text-card-foreground mb-6 text-center'>
-                  Saturday, November 15th
-                </h3>
-                <div className='space-y-4'>
-                  <div className='flex items-start space-x-3'>
-                    <div className='w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0'></div>
-                    <div>
-                      <p className='text-lg font-semibold text-card-foreground'>
-                        12:30 PM
-                      </p>
-                      <p className='text-lg text-muted-foreground'>
-                        Hackathon Kick-off
-                      </p>
-                      <p className='text-base text-muted-foreground'>
-                        Location: Hello World!, Morgridge Hall
-                      </p>
-                    </div>
-                  </div>
-                  <div className='flex items-start space-x-3'>
-                    <div className='w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0'></div>
-                    <div>
-                      <p className='text-lg font-semibold text-card-foreground'>
-                        1:30 PM
-                      </p>
-                      <p className='text-lg text-muted-foreground'>
-                        Hacking Begins
-                      </p>
-                    </div>
-                  </div>
-                  <div className='flex items-start space-x-3'>
-                    <div className='w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0'></div>
-                    <div>
-                      <p className='text-lg font-semibold text-card-foreground'>
-                        1:30 PM – 9:00 PM
-                      </p>
-                      <p className='text-lg text-muted-foreground'>
-                        Dedicated Hacking Space & Workshops
-                      </p>
-                      <p className='text-base text-muted-foreground'>
-                        Location: Morgridge Hall
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Sunday */}
-            <Card className='bg-card/50 backdrop-blur-md border border-border hover:bg-card/60 transition-colors'>
-              <CardContent className='p-6'>
-                <h3 className='text-3xl font-bold text-card-foreground mb-6 text-center'>
-                  Sunday, November 16th
-                </h3>
-                <div className='space-y-4'>
-                  <div className='flex items-start space-x-3'>
-                    <div className='w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0'></div>
-                    <div>
-                      <p className='text-lg font-semibold text-card-foreground'>
-                        1:30 PM
-                      </p>
-                      <p className='text-lg text-muted-foreground'>
-                        Hacking Ends & Projects Must Be Submitted
-                      </p>
-                    </div>
-                  </div>
-                  <div className='flex items-start space-x-3'>
-                    <div className='w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0'></div>
-                    <div>
-                      <p className='text-lg font-semibold text-card-foreground'>
-                        1:30 PM – 2:00 PM
-                      </p>
-                      <p className='text-lg text-muted-foreground'>
-                        Team Setup for Project Showcase
-                      </p>
-                    </div>
-                  </div>
-                  <div className='flex items-start space-x-3'>
-                    <div className='w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0'></div>
-                    <div>
-                      <p className='text-lg font-semibold text-card-foreground'>
-                        2:00 PM – 4:00 PM
-                      </p>
-                      <p className='text-lg text-muted-foreground'>
-                        Project Showcase & Judging
-                      </p>
-                    </div>
-                  </div>
-                  <div className='flex items-start space-x-3'>
-                    <div className='w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0'></div>
-                    <div>
-                      <p className='text-lg font-semibold text-card-foreground'>
-                        4:00 PM – 5:00 PM
-                      </p>
-                      <p className='text-lg text-muted-foreground'>
-                        Judge Deliberation & Final Decisions
-                      </p>
-                    </div>
-                  </div>
-                  <div className='flex items-start space-x-3'>
-                    <div className='w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0'></div>
-                    <div>
-                      <p className='text-lg font-semibold text-card-foreground'>
-                        5:00 PM – 6:00 PM
-                      </p>
-                      <p className='text-lg text-muted-foreground'>
-                        Award Ceremony & Closing Remarks
-                      </p>
-                      <p className='text-base text-muted-foreground'>
-                        Location: Hello World!, Morgridge Hall
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
+      <Schedule />
 
       {/* Tracks Section */}
       <section id='tracks' className='py-20 px-4 sm:px-6 lg:px-8'>
