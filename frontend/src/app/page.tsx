@@ -84,7 +84,7 @@ export default function Home() {
                 alt='Cursor'
                 width={500}
                 height={500}
-                className='object-contain opacity-70 hover:opacity-100 transition-opacity'
+                className='object-contain'
               />
             </Link>
           </div>
@@ -101,7 +101,7 @@ export default function Home() {
                 alt='Turtle.xyz'
                 width={200}
                 height={200}
-                className='object-contain opacity-70 hover:opacity-100 transition-opacity'
+                className='object-contain'
               />
             </Link>
             <Link
@@ -114,7 +114,7 @@ export default function Home() {
                 alt='College.xyz'
                 width={200}
                 height={200}
-                className='object-contain opacity-70 hover:opacity-100 transition-opacity'
+                className='object-contain'
               />
             </Link>
             <Link
@@ -127,7 +127,7 @@ export default function Home() {
                 alt='Gemini'
                 width={200}
                 height={200}
-                className='object-contain opacity-70 hover:opacity-100 transition-opacity'
+                className='object-contain'
               />
             </Link>
 
@@ -141,7 +141,7 @@ export default function Home() {
                 alt='CNCF'
                 width={200}
                 height={200}
-                className='object-contain opacity-70 hover:opacity-100 transition-opacity'
+                className='object-contain'
               />
             </Link>
           </div>
