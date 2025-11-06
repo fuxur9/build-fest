@@ -13,6 +13,11 @@ export const metadata: Metadata = {
   title: "Badger Build Fest",
   description:
     "Badger Build Fest held by Tech Exploration Lab and Badger Blockchain",
+  icons: {
+    icon: "/favicon.png",
+    shortcut: "/favicon.png",
+    apple: "/favicon.png",
+  },
 };
 
 export default function RootLayout({
@@ -21,8 +26,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang='en'>
-      <body className={`${spaceGrotesk.variable} antialiased`}>
+    <html lang='en' className='overflow-x-hidden'>
+      <body
+        className={`${spaceGrotesk.variable} antialiased overflow-x-hidden bg-gradient-to-br from-background via-primary/10 to-background`}
+      >
         <Navbar />
         {children}
       </body>

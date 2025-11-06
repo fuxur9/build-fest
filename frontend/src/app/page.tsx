@@ -1,4 +1,12 @@
 "use client";
+
+/**
+ * Home Page Component
+ *
+ * Main landing page for Badger Build Fest 2025 event.
+ * Displays event information, sponsors, tracks, schedule, and registration links.
+ */
+
 import Image from "next/image";
 import Link from "next/link";
 import { Calendar, MapPin, ArrowRight } from "lucide-react";
@@ -8,22 +16,23 @@ import Schedule from "@/components/Schedule";
 
 export default function Home() {
   return (
-    <div className='min-h-screen bg-gradient-to-br from-background via-primary/10 to-background'>
-      {/* Hero Section */}
+    <div className='min-h-screen w-full overflow-x-hidden bg-gradient-to-br from-background via-primary/10 to-background'>
+      {/* ============================================
+          HERO SECTION
+          Main event title, registration CTA, and key event details
+      ============================================ */}
       <section className='pt-32 pb-20 px-4 sm:px-6 lg:px-8'>
         <div className='max-w-8xl mx-auto text-center'>
+          {/* Event Title */}
           <div className='mb-16'>
             <div className='flex items-center justify-center gap-8 mb-12'>
               <h1 className='text-6xl md:text-8xl lg:text-8xl font-bold text-foreground font-space-grotesk'>
                 Badger Build Fest 2025
               </h1>
             </div>
-
-            {/* <p className='text-2xl md:text-3xl text-muted-foreground mb-8 max-w-3xl mx-auto'>
-              Badger • Unleashed • Innovate • Learn • Deliver
-            </p> */}
           </div>
 
+          {/* Primary Registration CTA Button */}
           <div className='flex justify-center mb-20'>
             <Button asChild size='lg' className='text-xl px-12 py-6'>
               <Link
@@ -37,8 +46,9 @@ export default function Home() {
             </Button>
           </div>
 
-          {/* Event Details */}
+          {/* Event Details Cards: Location and Date */}
           <div className='grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto'>
+            {/* Location Card */}
             <Card className='bg-card/50 backdrop-blur-md border border-border hover:bg-card/60 transition-colors'>
               <CardContent className='p-4 text-center'>
                 <MapPin className='w-12 h-12 text-primary mx-auto mb-4' />
@@ -48,6 +58,7 @@ export default function Home() {
                 <p className='text-xl text-muted-foreground'>Morgridge Hall</p>
               </CardContent>
             </Card>
+            {/* Date Card */}
             <Card className='bg-card/50 backdrop-blur-md border border-border hover:bg-card/60 transition-colors'>
               <CardContent className='p-4 text-center'>
                 <Calendar className='w-12 h-12 text-primary mx-auto mb-4' />
@@ -55,7 +66,7 @@ export default function Home() {
                   Date
                 </h3>
                 <p className='text-xl text-muted-foreground'>
-                  12:30 PM Nov 15 - 6:00 PM Nov 16
+                  12:00 PM Nov 15 - 5:00 PM Nov 16
                 </p>
               </CardContent>
             </Card>
@@ -63,7 +74,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Sponsors Section */}
+      {/* ============================================
+          SPONSORS SECTION
+          Displays event sponsors with clickable logos
+      ============================================ */}
       <section id='sponsors' className='py-20 px-4 sm:px-6 lg:px-8'>
         <div className='max-w-7xl mx-auto'>
           <div className='text-center mb-16'>
@@ -72,12 +86,13 @@ export default function Home() {
             </h2>
           </div>
 
-          {/* Cursor Logo - Single Row */}
+          {/* Primary Sponsor: Cursor (displayed separately, larger size) */}
           <div className='flex justify-center items-center mb-12'>
             <Link
               href='https://cursor.com'
               target='_blank'
               rel='noopener noreferrer'
+              className='transition-transform hover:scale-110 duration-300'
             >
               <Image
                 src='/cursor-text.png'
@@ -89,12 +104,13 @@ export default function Home() {
             </Link>
           </div>
 
-          {/* Other Sponsors - Single Row */}
+          {/* Secondary Sponsors: Displayed in a flex wrap layout */}
           <div className='flex flex-wrap justify-center items-center gap-12'>
             <Link
               href='https://turtle.xyz'
               target='_blank'
               rel='noopener noreferrer'
+              className='transition-transform hover:scale-110 duration-300'
             >
               <Image
                 src='/turtle-xyz-removebg-preview.png'
@@ -108,6 +124,7 @@ export default function Home() {
               href='https://college.xyz'
               target='_blank'
               rel='noopener noreferrer'
+              className='transition-transform hover:scale-110 duration-300'
             >
               <Image
                 src='/college-xyz.png'
@@ -121,6 +138,7 @@ export default function Home() {
               href='https://gemini.com'
               target='_blank'
               rel='noopener noreferrer'
+              className='transition-transform hover:scale-110 duration-300'
             >
               <Image
                 src='/gemini.png'
@@ -135,6 +153,7 @@ export default function Home() {
               href='https://cncf.io'
               target='_blank'
               rel='noopener noreferrer'
+              className='transition-transform hover:scale-110 duration-300'
             >
               <Image
                 src='/CNCF-Picsart-BackgroundRemover.png'
@@ -148,7 +167,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Host Organizations */}
+      {/* ============================================
+          HOST ORGANIZATIONS SECTION
+          Displays the two main hosting organizations
+      ============================================ */}
       <section className='py-20 px-4 sm:px-6 lg:px-8'>
         <div className='max-w-4xl mx-auto text-center'>
           <h2 className='text-3xl md:text-4xl font-bold text-foreground mb-8'>
@@ -156,6 +178,7 @@ export default function Home() {
           </h2>
 
           <div className='flex flex-col sm:flex-row items-center justify-center gap-8 sm:gap-12'>
+            {/* Tech Exploration Lab */}
             <div className='flex flex-col items-center text-center'>
               <Link
                 href='https://techexplorationlab.wisc.edu/'
@@ -175,8 +198,10 @@ export default function Home() {
               </span>
             </div>
 
+            {/* Separator */}
             <span className='text-3xl font-bold text-primary'>×</span>
 
+            {/* Badger Blockchain */}
             <div className='flex flex-col items-center text-center'>
               <Link
                 href='https://www.instagram.com/badgerblockchain/'
@@ -200,7 +225,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Partner Organizations */}
+      {/* ============================================
+          PARTNER ORGANIZATIONS SECTION
+          Displays partner organizations supporting the event
+      ============================================ */}
       <section className='py-20 px-4 sm:px-6 lg:px-8'>
         <div className='max-w-4xl mx-auto text-center'>
           <h2 className='text-3xl md:text-4xl font-bold text-foreground mb-8'>
@@ -208,6 +236,7 @@ export default function Home() {
           </h2>
 
           <div className='flex flex-col sm:flex-row items-center justify-center gap-8 sm:gap-12'>
+            {/* Cursor at UW-Madison */}
             <div className='flex flex-col items-center text-center'>
               <Link
                 href='https://linktr.ee/cursoruwmadison?utm_source=linktree_profile_share&ltsid=25570ce8-6567-4c7b-a28c-2bfd3de83f4f'
@@ -228,6 +257,7 @@ export default function Home() {
               </span>
             </div>
 
+            {/* Transcend UW */}
             <div className='flex flex-col items-center text-center'>
               <Link
                 href='http://transcenduw.com/'
@@ -248,6 +278,7 @@ export default function Home() {
               </span>
             </div>
 
+            {/* White Paper Reading Club */}
             <div className='flex flex-col items-center text-center'>
               <Link
                 href='https://www.thewhitepaperreading.club/'
@@ -255,15 +286,13 @@ export default function Home() {
                 rel='noopener noreferrer'
                 className='transition-transform hover:scale-105'
               >
-                <div className='transition-transform hover:scale-105'>
-                  <Image
-                    src='/wprc.jpeg'
-                    alt='White Paper Reading Club'
-                    width={200}
-                    height={200}
-                    className='rounded-lg object-contain mb-3'
-                  />
-                </div>
+                <Image
+                  src='/wprc.jpeg'
+                  alt='White Paper Reading Club'
+                  width={200}
+                  height={200}
+                  className='rounded-lg object-contain mb-3'
+                />
               </Link>
               <span className='text-lg font-semibold text-foreground'>
                 White Paper Reading Club
@@ -273,7 +302,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* About Section */}
+      {/* ============================================
+          ABOUT SECTION
+          Event description and overview
+      ============================================ */}
       <section id='about' className='py-20 px-4 sm:px-6 lg:px-8 bg-muted/20'>
         <div className='max-w-7xl mx-auto'>
           <div className='text-center mb-16'>
@@ -301,160 +333,189 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Schedule Section */}
+      {/* ============================================
+          SCHEDULE SECTION
+          Event schedule component (imported from Schedule.tsx)
+      ============================================ */}
       <Schedule />
 
-      {/* Tracks Section */}
+      {/* ============================================
+          TRACKS SECTION
+          Competition tracks: Venture and Blockchain
+      ============================================ */}
       <section id='tracks' className='py-20 px-4 sm:px-6 lg:px-8'>
         <div className='max-w-7xl mx-auto'>
           <div className='text-center mb-16'>
             <h2 className='text-4xl md:text-5xl font-bold text-foreground mb-6'>
               Competition Tracks
             </h2>
+            <p className='text-xl text-muted-foreground max-w-2xl mx-auto'>
+              Choose your path and build something amazing in 24 hours
+            </p>
           </div>
 
-          <div className='space-y-8'>
-            <div className='grid grid-cols-1 lg:grid-cols-2 gap-8'>
-              {/* Venture Track */}
-              <Card className='bg-gradient-to-br from-primary/10 to-accent/10 backdrop-blur-md border border-primary/20 hover:border-primary/40 transition-all duration-300'>
-                <CardContent className='p-8'>
-                  {/* Header */}
-                  <div className='text-center mb-8'>
-                    <h3 className='text-3xl font-bold text-card-foreground mb-3'>
-                      Venture Track
-                    </h3>
-                    <p className='text-xl text-foreground font-semibold'>
-                      - Build an MVP, demo it, and pitch its market fit -
+          <div className='grid grid-cols-1 lg:grid-cols-2 gap-8'>
+            {/* ============================================
+                VENTURE TRACK CARD
+                Focuses on MVP development and pitch presentation
+            ============================================ */}
+            <Card className='group relative overflow-hidden bg-gradient-to-br from-primary/5 via-white to-accent/5 backdrop-blur-sm border-2 border-primary/30 hover:border-primary/60 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1'>
+              <CardContent className='p-8'>
+                {/* Track Header */}
+                <div className='text-center mb-8'>
+                  <h3 className='text-3xl font-bold text-card-foreground mb-3'>
+                    Venture Track
+                  </h3>
+                  <p className='text-lg text-muted-foreground font-medium'>
+                    - Build an MVP, demo it, and pitch its market fit -
+                  </p>
+                </div>
+
+                {/* Visual Separator */}
+                <div className='w-full h-[2px] bg-gradient-to-r from-transparent via-primary/50 to-transparent mb-8'></div>
+
+                {/* Track Details */}
+                <div className='space-y-6'>
+                  <div>
+                    <h4 className='font-semibold text-card-foreground mb-2 text-lg'>
+                      What You&apos;ll Build
+                    </h4>
+                    <p className='text-card-foreground leading-relaxed'>
+                      This track is defined by startup-level speed, not coding
+                      expertise. Your 24-hour challenge is to go from ideation
+                      to a functional demo and a polished, investment-worthy
+                      pitch deck.
                     </p>
                   </div>
 
-                  {/* Separator Line */}
-                  <div className='w-full h-px bg-primary/30 mb-8'></div>
+                  <div>
+                    <h4 className='font-semibold text-card-foreground mb-2 text-lg'>
+                      Beginner-Friendly
+                    </h4>
+                    <p className='text-card-foreground leading-relaxed'>
+                      You do not need to be an experienced programmer. Your
+                      pitch, problem validation, and market-fit justification
+                      will be weighted much more heavily than the technical
+                      implementation.
+                    </p>
+                  </div>
 
-                  {/* Content */}
-                  <div className='space-y-6'>
-                    <div>
-                      <h4 className='font-semibold text-card-foreground mb-2'>
-                        What You&apos;ll Build
-                      </h4>
-                      <p className='text-card-foreground'>
-                        This track is defined by startup-level speed, not coding
-                        expertise. Your 24-hour challenge is to go from ideation
-                        to a functional demo and a polished, investment-worthy
-                        pitch deck.
-                      </p>
-                    </div>
-
-                    <div>
-                      <h4 className='font-semibold text-card-foreground mb-2'>
-                        Beginner-Friendly
-                      </h4>
-                      <p className='text-card-foreground'>
-                        You do not need to be an experienced programmer. Your
-                        pitch, problem validation, and market-fit justification
-                        will be weighted much more heavily than the technical
-                        implementation.
-                      </p>
-                    </div>
-
-                    <div>
-                      <h4 className='font-semibold text-card-foreground mb-3'>
-                        Support & Resources
-                      </h4>
-                      <p className='text-card-foreground mb-3'>
-                        To help you build a prototype you can use to showcase
-                        your idea, you will have access to:
-                      </p>
-                      <ul className='text-card-foreground space-y-2 ml-4'>
-                        <li>
-                          • Workshops on Figma, UI design and AI tools (like
+                  <div>
+                    <h4 className='font-semibold text-card-foreground mb-3 text-lg'>
+                      Support & Resources
+                    </h4>
+                    <p className='text-card-foreground mb-3 leading-relaxed'>
+                      To help you build a prototype you can use to showcase your
+                      idea, you will have access to:
+                    </p>
+                    <ul className='text-card-foreground space-y-2 ml-4 leading-relaxed'>
+                      <li className='flex items-start gap-2'>
+                        <span className='text-primary mt-1'>•</span>
+                        <span>
+                          Workshops on Figma, UI design and AI tools (like
                           Cursor) to help you build a prototype you can touch
                           and play with.
-                        </li>
-                        <li>
-                          • On-site mentors, including experienced investors and
+                        </span>
+                      </li>
+                      <li className='flex items-start gap-2'>
+                        <span className='text-primary mt-1'>•</span>
+                        <span>
+                          On-site mentors, including experienced investors and
                           founders, to help guide your pitch deck and make sure
                           your vision is crystal clear.
-                        </li>
-                      </ul>
-                    </div>
-
-                    <div>
-                      <h4 className='font-semibold text-black mb-2'>
-                        Judging Panel
-                      </h4>
-                      <p className='text-black'>
-                        The judges are experienced founders, VCs, and tech
-                        leaders. Your job is to convince them your venture is
-                        the one to fund.
-                      </p>
-                    </div>
+                        </span>
+                      </li>
+                    </ul>
                   </div>
-                </CardContent>
-              </Card>
 
-              {/* Blockchain Track */}
-              <Card className='bg-gradient-to-br from-primary/10 to-accent/10 backdrop-blur-md border border-primary/20 hover:border-primary/40 transition-all duration-300'>
-                <CardContent className='p-8'>
-                  {/* Header */}
-                  <div className='text-center mb-8'>
-                    <h3 className='text-3xl font-bold text-card-foreground mb-3'>
-                      Blockchain Track
-                    </h3>
-                    <p className='text-xl text-foreground font-semibold'>
-                      - Create secure, transparent apps on the blockchain -
+                  <div>
+                    <h4 className='font-semibold text-card-foreground mb-2 text-lg'>
+                      Judging Panel
+                    </h4>
+                    <p className='text-card-foreground leading-relaxed'>
+                      The judges are experienced founders, VCs, and tech
+                      leaders. Your job is to convince them your venture is the
+                      one to fund.
+                    </p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* ============================================
+                BLOCKCHAIN TRACK CARD
+                Focuses on blockchain application development
+            ============================================ */}
+            <Card className='group relative overflow-hidden bg-gradient-to-br from-primary/5 via-white to-accent/5 backdrop-blur-sm border-2 border-primary/30 hover:border-primary/60 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1'>
+              <CardContent className='p-8'>
+                {/* Track Header */}
+                <div className='text-center mb-8'>
+                  <h3 className='text-3xl font-bold text-card-foreground mb-3'>
+                    Blockchain Track
+                  </h3>
+                  <p className='text-lg text-muted-foreground font-medium'>
+                    - Create secure, transparent apps on the blockchain -
+                  </p>
+                </div>
+
+                {/* Visual Separator */}
+                <div className='w-full h-[2px] bg-gradient-to-r from-transparent via-primary/50 to-transparent mb-8'></div>
+
+                {/* Track Details */}
+                <div className='space-y-6'>
+                  <div>
+                    <h4 className='font-semibold text-card-foreground mb-2 text-lg'>
+                      What You&apos;ll Build
+                    </h4>
+                    <p className='text-card-foreground leading-relaxed'>
+                      This track is designed for developers who are interested
+                      in building secure, transparent apps on the blockchain.
+                      You will be provided with ample help and modern tools to
+                      supercharge your research and rapid development.
                     </p>
                   </div>
 
-                  {/* Separator Line */}
-                  <div className='w-full h-px bg-primary/30 mb-8'></div>
-
-                  {/* Content */}
-                  <div className='space-y-6'>
-                    <div>
-                      <h4 className='font-semibold text-card-foreground mb-2'>
-                        What You&apos;ll Build
-                      </h4>
-                      <p className='text-card-foreground'>
-                        This track is designed for developers who are interested
-                        in building secure, transparent apps on the blockchain.
-                        You will be provided with ample help and modern tools to
-                        supercharge your research and rapid development.
-                      </p>
-                    </div>
-
-                    <div>
-                      <h4 className='font-semibold text-card-foreground mb-2'>
-                        24-Hour Challenge
-                      </h4>
-                      <p className='text-card-foreground'>
-                        Your 24-hour challenge is to solve a problem you care
-                        about and build a secure, transparent app on the
-                        blockchain.
-                      </p>
-                    </div>
-
-                    <div>
-                      <h4 className='font-semibold text-black mb-2'>
-                        Judging Criteria
-                      </h4>
-                      <p className='text-black'>TBA</p>
-                    </div>
+                  <div>
+                    <h4 className='font-semibold text-card-foreground mb-2 text-lg'>
+                      24-Hour Challenge
+                    </h4>
+                    <p className='text-card-foreground leading-relaxed'>
+                      Your 24-hour challenge is to solve a problem you care
+                      about on campus using blockchain technology and build a
+                      secure, transparent decentralized application. You can
+                      also choose to dive deep into the ecosystem and write a
+                      report or project proposal.
+                    </p>
                   </div>
-                </CardContent>
-              </Card>
-            </div>
+
+                  <div>
+                    <h4 className='font-semibold text-card-foreground mb-2 text-lg'>
+                      Judging Criteria
+                    </h4>
+                    <p className='text-card-foreground leading-relaxed'>
+                      The judges are experienced blockchain developers,
+                      researchers, and industry leaders. Your job is to convince
+                      them your project is the one to build.
+                    </p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* ============================================
+          CALL-TO-ACTION SECTION
+          Final registration and contact prompts
+      ============================================ */}
       <section className='py-20 px-4 sm:px-6 lg:px-8'>
         <div className='max-w-4xl mx-auto'>
           <h2 className='text-4xl md:text-5xl font-bold text-foreground mb-6 text-center'>
             Ready to Build the Future?
           </h2>
           <div className='flex flex-col sm:flex-row gap-4 justify-center'>
+            {/* Primary CTA: Registration */}
             <Button size='lg' className='text-lg px-8 py-6' asChild>
               <Link
                 href='https://forms.gle/V41KWM2T9SjHj1cG9'
@@ -465,6 +526,7 @@ export default function Home() {
                 <ArrowRight className='ml-2 w-5 h-5' />
               </Link>
             </Button>
+            {/* Secondary CTA: Contact */}
             <Button
               variant='outline'
               size='lg'
@@ -483,7 +545,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Footer */}
+      {/* ============================================
+          FOOTER
+          Event information and organization links
+      ============================================ */}
       <footer className='bg-muted/40 backdrop-blur-md border-t border-border py-12 px-4 sm:px-6 lg:px-8'>
         <div className='max-w-7xl mx-auto'>
           <div className='flex flex-col md:flex-row justify-between items-center'>
