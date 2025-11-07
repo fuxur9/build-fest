@@ -163,6 +163,20 @@ export default function Home() {
                 className='object-contain'
               />
             </Link>
+            <Link
+              href='https://teamkinetic.net/'
+              target='_blank'
+              rel='noopener noreferrer'
+              className='transition-transform hover:scale-110 duration-300'
+            >
+              <Image
+                src='/kinetic-long.png'
+                alt='Kinetic Solutions'
+                width={200}
+                height={200}
+                className='object-contain'
+              />
+            </Link>
           </div>
         </div>
       </section>
