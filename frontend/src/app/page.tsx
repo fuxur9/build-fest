@@ -392,9 +392,13 @@ export default function Home() {
               <CardContent className='p-8'>
                 {/* Track Header */}
                 <div className='text-center mb-8'>
-                  <h3 className='text-3xl font-bold text-card-foreground mb-3'>
+                  <h3 className='text-3xl font-bold text-card-foreground '>
                     Venture Track
                   </h3>
+                  <p className='text-lg text-muted-foreground font-medium text-primary'>
+                    - Brought to you by Cursor -
+                  </p>
+
                   <p className='text-lg text-muted-foreground font-medium'>
                     - Build an MVP, demo it, and pitch its market fit -
                   </p>
