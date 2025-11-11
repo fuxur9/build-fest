@@ -18,10 +18,25 @@ export default function Home() {
   return (
     <div className='min-h-screen w-full overflow-x-hidden bg-gradient-to-br from-background via-primary/10 to-background'>
       {/* ============================================
+          WORKSHOP BANNER
+          Prominent banner for Badger Blockchain Workshop
+      ============================================ */}
+      <div className='fixed top-16 left-0 right-0 z-40 bg-gradient-to-r from-primary via-primary/95 to-primary text-white shadow-lg'>
+        <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3'>
+          <div className='text-center'>
+            <p className='text-sm sm:text-base md:text-lg font-bold'>
+              Check Out Badger Blockchain Workshop To Prepare for the Hackathon
+              on Nov 13 (Thurs.) @Morgridge Hall Room. 2564 5:30 PM!
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* ============================================
           HERO SECTION
           Main event title, registration CTA, and key event details
       ============================================ */}
-      <section className='pt-32 pb-20 px-4 sm:px-6 lg:px-8'>
+      <section className='pt-40 pb-20 px-4 sm:px-6 lg:px-8'>
         <div className='max-w-8xl mx-auto text-center'>
           {/* Event Title */}
           <div className='mb-16'>
