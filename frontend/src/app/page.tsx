@@ -192,6 +192,34 @@ export default function Home() {
                 className='object-contain'
               />
             </Link>
+            <div className='flex flex-col items-center scale-[0.8] origin-center'>
+              <Link
+                href='https://stratovc.com/'
+                target='_blank'
+                rel='noopener noreferrer'
+                className='transition-transform hover:scale-110 duration-300'
+              >
+                <div
+                  className='rounded-lg p-4'
+                  style={{ backgroundColor: "rgb(2, 3, 38)" }}
+                >
+                  <Image
+                    src='/Stratologo.png'
+                    alt='Strato VC'
+                    width={200}
+                    height={200}
+                    className='rounded-lg object-contain'
+                  />
+                  <Image
+                    src='/stratovc.png'
+                    alt='Strato VC'
+                    width={200}
+                    height={60}
+                    className='object-contain mt-2'
+                  />
+                </div>
+              </Link>
+            </div>
           </div>
         </div>
       </section>
@@ -530,6 +558,17 @@ export default function Home() {
                       researchers, and industry leaders. Your job is to convince
                       them your project is the one to build.
                     </p>
+                  </div>
+                  <div className='text-center'>
+                    <Link
+                      href='https://www.notion.so/Badger-Build-Fest-Blockchain-Track-2a4125054f828071903be6faa5ef7b5a?source=copy_link'
+                      target='_blank'
+                      rel='noopener noreferrer'
+                      className='text-lg text-primary font-medium underline hover:text-primary/80 transition-colors inline-flex items-center gap-1'
+                    >
+                      <span className='text-primary'>Track Details</span>
+                      <ArrowRight className='w-4 h-4' />
+                    </Link>
                   </div>
                 </div>
               </CardContent>
