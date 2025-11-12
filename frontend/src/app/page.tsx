@@ -25,8 +25,8 @@ export default function Home() {
         <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3'>
           <div className='text-center'>
             <p className='text-sm sm:text-base md:text-lg font-bold'>
-              Check Out Badger Blockchain Workshop To Prepare for the Hackathon
-              on Nov 13 (Thurs.) @Morgridge Hall Room. 2564 5:30 PM!
+              Check Out Badger Blockchain Workshop on Nov 13 (Thurs.) @Morgridge
+              Hall Room. 2564 5:30 PM To Prepare for the Hackathon!
             </p>
           </div>
         </div>
