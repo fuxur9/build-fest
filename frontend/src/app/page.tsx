@@ -106,22 +106,9 @@ export default function Home() {
             </Link>
           </div>
 
-          {/* Secondary Sponsors: Displayed in a flex wrap layout */}
-          <div className='flex flex-wrap justify-center items-center gap-12'>
-            <Link
-              href='https://turtle.xyz'
-              target='_blank'
-              rel='noopener noreferrer'
-              className='transition-transform hover:scale-110 duration-300'
-            >
-              <Image
-                src='/turtle-xyz-removebg-preview.png'
-                alt='Turtle.xyz'
-                width={200}
-                height={200}
-                className='object-contain'
-              />
-            </Link>
+          {/* Secondary Sponsors: Displayed in two rows */}
+          {/* First Row: college.xyz, gemini, turtle.xyz */}
+          <div className='flex flex-wrap justify-center items-center gap-12 mb-12'>
             <Link
               href='https://college.xyz'
               target='_blank'
@@ -150,21 +137,24 @@ export default function Home() {
                 className='object-contain'
               />
             </Link>
-
             <Link
-              href='https://cncf.io'
+              href='https://turtle.xyz'
               target='_blank'
               rel='noopener noreferrer'
               className='transition-transform hover:scale-110 duration-300'
             >
               <Image
-                src='/CNCF-Picsart-BackgroundRemover.png'
-                alt='CNCF'
+                src='/turtle-xyz-removebg-preview.png'
+                alt='Turtle.xyz'
                 width={200}
                 height={200}
                 className='object-contain'
               />
             </Link>
+          </div>
+
+          {/* Second Row: kinetic, stratovc, cloud native madison */}
+          <div className='flex flex-wrap justify-center items-center gap-12'>
             <Link
               href='https://teamkinetic.net/'
               target='_blank'
@@ -207,6 +197,20 @@ export default function Home() {
                 </div>
               </Link>
             </div>
+            <Link
+              href='https://cncf.io'
+              target='_blank'
+              rel='noopener noreferrer'
+              className='transition-transform hover:scale-110 duration-300'
+            >
+              <Image
+                src='/CNCF-Picsart-BackgroundRemover.png'
+                alt='CNCF'
+                width={200}
+                height={200}
+                className='object-contain'
+              />
+            </Link>
           </div>
         </div>
       </section>
