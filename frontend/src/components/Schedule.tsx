@@ -27,23 +27,23 @@ const scheduleData: ScheduleRow[] = [
     day: "Saturday",
   },
   {
-    time: "1:00 PM - 2:00 PM",
-    sideEvent: "Workshop 1: Project Registration & Team Building",
+    time: "1:10 PM - 2:00 PM",
+    sideEvent: "Cursor IDE Workshop (Room B2590)",
     day: "Saturday",
   },
   {
     time: "2:00 PM - 3:00 PM",
-    sideEvent: "Workshop 2",
+    sideEvent: "Blockchain basics: Solana CRUD dApp (Room B2556)",
     day: "Saturday",
   },
   {
     time: "3:00 PM - 4:00 PM",
-    sideEvent: "Workshop 3",
+    sideEvent: "Whitepaper reading: Agent Payment x402 (Room B2556)",
     day: "Saturday",
   },
   {
     time: "4:00 PM - 5:00 PM",
-    sideEvent: "Workshop 4",
+    sideEvent: "Transcend: How to Pitch (Room B2550)",
     day: "Saturday",
   },
   {
