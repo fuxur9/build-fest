@@ -55,7 +55,9 @@ export default function Home() {
                 <h3 className='text-2xl font-semibold text-card-foreground mb-2'>
                   Location
                 </h3>
-                <p className='text-xl text-muted-foreground'>Morgridge Hall</p>
+                <p className='text-xl text-muted-foreground'>
+                  Morgridge Hall Basement Area
+                </p>
               </CardContent>
             </Card>
             {/* Date Card */}
