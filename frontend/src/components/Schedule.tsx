@@ -68,7 +68,7 @@ const scheduleData: ScheduleRow[] = [
     day: "Sunday",
   },
   {
-    time: "1:00 PM",
+    time: "12:00 PM",
     mainEvent: "PROJECTS DUE (Submissions Lock)",
     sideEvent: "Snack Buffet Opens",
     day: "Sunday",
