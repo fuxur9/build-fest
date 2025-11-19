@@ -12,7 +12,8 @@ import Link from "next/link";
 import { Calendar, MapPin, ArrowRight } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import Schedule from "@/components/Schedule";
+import PartnerOrganizationCard from "@/components/PartnerOrganizationCard";
+import SponsorCard from "@/components/SponsorCard";
 
 export default function Home() {
   return (
@@ -88,129 +89,82 @@ export default function Home() {
             </h2>
           </div>
 
-          {/* Primary Sponsor: Cursor (displayed separately, larger size) */}
-          <div className='flex justify-center items-center mb-12'>
-            <Link
-              href='https://cursor.com'
-              target='_blank'
-              rel='noopener noreferrer'
-              className='transition-transform hover:scale-110 duration-300'
-            >
-              <Image
-                src='/cursor-text.png'
-                alt='Cursor'
-                width={500}
-                height={500}
-                className='object-contain'
-              />
-            </Link>
-          </div>
+          {/* First Tier Sponsor: Cursor */}
+          <SponsorCard
+            sponsor={{
+              name: "Cursor",
+              logoUrl: "/cursor-text.png",
+              logoAlt: "Cursor",
+              websiteUrl: "https://cursor.com",
+              tier: "first",
+              logoWidth: 500,
+              logoHeight: 500,
+            }}
+          />
 
-          {/* Secondary Sponsors: Displayed in two rows */}
-          {/* First Row: college.xyz, gemini, turtle.xyz */}
+          {/* Second Tier Sponsors */}
           <div className='flex flex-wrap justify-center items-center gap-12 mb-12'>
-            <Link
-              href='https://college.xyz'
-              target='_blank'
-              rel='noopener noreferrer'
-              className='transition-transform hover:scale-110 duration-300'
-            >
-              <Image
-                src='/college-xyz.png'
-                alt='College.xyz'
-                width={200}
-                height={200}
-                className='object-contain'
-              />
-            </Link>
-            <Link
-              href='https://gemini.com'
-              target='_blank'
-              rel='noopener noreferrer'
-              className='transition-transform hover:scale-110 duration-300'
-            >
-              <Image
-                src='/gemini.png'
-                alt='Gemini'
-                width={200}
-                height={200}
-                className='object-contain'
-              />
-            </Link>
-            <Link
-              href='https://turtle.xyz'
-              target='_blank'
-              rel='noopener noreferrer'
-              className='transition-transform hover:scale-110 duration-300'
-            >
-              <Image
-                src='/turtle-xyz-removebg-preview.png'
-                alt='Turtle.xyz'
-                width={200}
-                height={200}
-                className='object-contain'
-              />
-            </Link>
+            <SponsorCard
+              sponsor={{
+                name: "College.xyz",
+                logoUrl: "/college-xyz.png",
+                logoAlt: "College.xyz",
+                websiteUrl: "https://college.xyz",
+                tier: "second",
+              }}
+            />
+            <SponsorCard
+              sponsor={{
+                name: "Gemini",
+                logoUrl: "/gemini.png",
+                logoAlt: "Gemini",
+                websiteUrl: "https://gemini.com",
+                tier: "second",
+              }}
+            />
+            <SponsorCard
+              sponsor={{
+                name: "Turtle.xyz",
+                logoUrl: "/turtle-xyz-removebg-preview.png",
+                logoAlt: "Turtle.xyz",
+                websiteUrl: "https://turtle.xyz",
+                tier: "second",
+              }}
+            />
           </div>
 
-          {/* Second Row: kinetic, stratovc, cloud native madison */}
+          {/* Second Tier Sponsors - Second Row */}
           <div className='flex flex-wrap justify-center items-center gap-12'>
-            <Link
-              href='https://teamkinetic.net/'
-              target='_blank'
-              rel='noopener noreferrer'
-              className='transition-transform hover:scale-110 duration-300'
-            >
-              <Image
-                src='/kinetic-long.png'
-                alt='Kinetic Solutions'
-                width={200}
-                height={200}
-                className='object-contain'
-              />
-            </Link>
+            <SponsorCard
+              sponsor={{
+                name: "Kinetic Solutions",
+                logoUrl: "/kinetic-long.png",
+                logoAlt: "Kinetic Solutions",
+                websiteUrl: "https://teamkinetic.net/",
+                tier: "second",
+              }}
+            />
             <div className='flex flex-col items-center scale-[0.8] origin-center'>
-              <Link
-                href='https://stratovc.com/'
-                target='_blank'
-                rel='noopener noreferrer'
-                className='transition-transform hover:scale-110 duration-300'
-              >
-                <div
-                  className='rounded-lg p-4'
-                  style={{ backgroundColor: "rgb(2, 3, 38)" }}
-                >
-                  <Image
-                    src='/Stratologo.png'
-                    alt='Strato VC'
-                    width={200}
-                    height={200}
-                    className='rounded-lg object-contain'
-                  />
-                  <Image
-                    src='/stratovc.png'
-                    alt='Strato VC'
-                    width={200}
-                    height={60}
-                    className='object-contain mt-2'
-                  />
-                </div>
-              </Link>
-            </div>
-            <Link
-              href='https://cncf.io'
-              target='_blank'
-              rel='noopener noreferrer'
-              className='transition-transform hover:scale-110 duration-300'
-            >
-              <Image
-                src='/CNCF-Picsart-BackgroundRemover.png'
-                alt='CNCF'
-                width={200}
-                height={200}
-                className='object-contain'
+              <SponsorCard
+                sponsor={{
+                  name: "Strato VC",
+                  logoUrl: "/Stratologo.png",
+                  logoAlt: "Strato VC",
+                  websiteUrl: "https://stratovc.com/",
+                  tier: "second",
+                  customBackgroundColor: "rgb(2, 3, 38)",
+                }}
               />
-            </Link>
+            </div>
+            <SponsorCard
+              sponsor={{
+                name: "CNCF",
+                logoUrl: "/CNCF-Picsart-BackgroundRemover.png",
+                logoAlt: "CNCF",
+                websiteUrl: "https://cncf.io",
+                tier: "second",
+              }}
+            />
           </div>
         </div>
       </section>
@@ -284,68 +238,39 @@ export default function Home() {
           </h2>
 
           <div className='flex flex-col sm:flex-row items-center justify-center gap-8 sm:gap-12'>
-            {/* Cursor at UW-Madison */}
-            <div className='flex flex-col items-center text-center'>
-              <Link
-                href='https://linktr.ee/cursoruwmadison?utm_source=linktree_profile_share&ltsid=25570ce8-6567-4c7b-a28c-2bfd3de83f4f'
-                target='_blank'
-                rel='noopener noreferrer'
-                className='transition-transform hover:scale-105'
-              >
-                <Image
-                  src='/CursorAtUWLogo-modified.png'
-                  alt='Cursor at UW-Madison'
-                  width={200}
-                  height={200}
-                  className='rounded-lg object-contain mb-3'
-                />
-              </Link>
-              <span className='text-lg font-semibold text-foreground'>
-                Cursor at UW-Madison
-              </span>
-            </div>
+            <PartnerOrganizationCard
+              partner={{
+                name: "Cursor at UW-Madison",
+                logoUrl: "/CursorAtUWLogo-modified.png",
+                logoAlt: "Cursor at UW-Madison",
+                websiteUrl:
+                  "https://linktr.ee/cursoruwmadison?utm_source=linktree_profile_share&ltsid=25570ce8-6567-4c7b-a28c-2bfd3de83f4f",
+                logoWidth: 200,
+                logoHeight: 200,
+              }}
+            />
 
-            {/* Transcend UW */}
-            <div className='flex flex-col items-center text-center'>
-              <Link
-                href='http://transcenduw.com/'
-                target='_blank'
-                rel='noopener noreferrer'
-                className='transition-transform hover:scale-105'
-              >
-                <Image
-                  src='/transcend.png'
-                  alt='Transcend UW'
-                  width={200}
-                  height={200}
-                  className='rounded-lg object-contain mb-3'
-                />
-              </Link>
-              <span className='text-lg font-semibold text-foreground'>
-                Transcend UW
-              </span>
-            </div>
+            <PartnerOrganizationCard
+              partner={{
+                name: "Transcend UW",
+                logoUrl: "/transcend.png",
+                logoAlt: "Transcend UW",
+                websiteUrl: "http://transcenduw.com/",
+                logoWidth: 200,
+                logoHeight: 200,
+              }}
+            />
 
-            {/* White Paper Reading Club */}
-            <div className='flex flex-col items-center text-center'>
-              <Link
-                href='https://www.thewhitepaperreading.club/'
-                target='_blank'
-                rel='noopener noreferrer'
-                className='transition-transform hover:scale-105'
-              >
-                <Image
-                  src='/wprc.jpeg'
-                  alt='White Paper Reading Club'
-                  width={200}
-                  height={200}
-                  className='rounded-lg object-contain mb-3'
-                />
-              </Link>
-              <span className='text-lg font-semibold text-foreground'>
-                White Paper Reading Club
-              </span>
-            </div>
+            <PartnerOrganizationCard
+              partner={{
+                name: "White Paper Reading Club",
+                logoUrl: "/wprc.jpeg",
+                logoAlt: "White Paper Reading Club",
+                websiteUrl: "https://www.thewhitepaperreading.club/",
+                logoWidth: 200,
+                logoHeight: 200,
+              }}
+            />
           </div>
         </div>
       </section>
@@ -382,187 +307,55 @@ export default function Home() {
       </section>
 
       {/* ============================================
-          SCHEDULE SECTION
-          Event schedule component (imported from Schedule.tsx)
+          QUICK LINKS SECTION
+          Links to detailed pages
       ============================================ */}
-      <Schedule />
-
-      {/* ============================================
-          TRACKS SECTION
-          Competition tracks: Venture and Blockchain
-      ============================================ */}
-      <section id='tracks' className='py-20 px-4 sm:px-6 lg:px-8'>
+      <section className='py-20 px-4 sm:px-6 lg:px-8'>
         <div className='max-w-7xl mx-auto'>
           <div className='text-center mb-16'>
             <h2 className='text-4xl md:text-5xl font-bold text-foreground mb-6'>
-              Competition Tracks
+              Explore More
             </h2>
-            <p className='text-xl text-muted-foreground max-w-2xl mx-auto'>
-              Choose your path and build something amazing in 24 hours
-            </p>
           </div>
 
-          <div className='grid grid-cols-1 lg:grid-cols-2 gap-8'>
-            {/* ============================================
-                VENTURE TRACK CARD
-                Focuses on MVP development and pitch presentation
-            ============================================ */}
-            <Card className='group relative overflow-hidden bg-gradient-to-br from-primary/5 via-white to-accent/5 backdrop-blur-sm border-2 border-primary/30 hover:border-primary/60 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1'>
-              <CardContent className='p-8'>
-                {/* Track Header */}
-                <div className='text-center mb-8'>
-                  <h3 className='text-3xl font-bold text-card-foreground '>
-                    Venture Track
+          <div className='grid grid-cols-1 md:grid-cols-3 gap-6'>
+            <Card className='bg-card/50 backdrop-blur-md border border-border hover:bg-card/60 transition-colors cursor-pointer group'>
+              <Link href='/schedule'>
+                <CardContent className='p-6 text-center'>
+                  <h3 className='text-2xl font-semibold text-card-foreground mb-2 group-hover:text-primary transition-colors'>
+                    Schedule
                   </h3>
-                  <p className='text-lg text-muted-foreground font-medium text-primary'>
-                    - Brought to you by Cursor -
+                  <p className='text-muted-foreground'>
+                    View the complete event schedule
                   </p>
-
-                  <p className='text-lg text-muted-foreground font-medium'>
-                    - Build an MVP, demo it, and pitch its market fit -
-                  </p>
-                </div>
-
-                {/* Visual Separator */}
-                <div className='w-full h-[2px] bg-gradient-to-r from-transparent via-primary/50 to-transparent mb-8'></div>
-
-                {/* Track Details */}
-                <div className='space-y-6'>
-                  <div>
-                    <h4 className='font-semibold text-card-foreground mb-2 text-lg'>
-                      What You&apos;ll Build
-                    </h4>
-                    <p className='text-card-foreground leading-relaxed'>
-                      This track is defined by startup-level speed, not coding
-                      expertise. Your 24-hour challenge is to go from ideation
-                      to a functional demo and a polished, investment-worthy
-                      pitch deck.
-                    </p>
-                  </div>
-
-                  <div>
-                    <h4 className='font-semibold text-card-foreground mb-2 text-lg'>
-                      Beginner-Friendly
-                    </h4>
-                    <p className='text-card-foreground leading-relaxed'>
-                      You do not need to be an experienced programmer. Your
-                      pitch, problem validation, and market-fit justification
-                      will be weighted much more heavily than the technical
-                      implementation.
-                    </p>
-                  </div>
-
-                  <div>
-                    <h4 className='font-semibold text-card-foreground mb-3 text-lg'>
-                      Support & Resources
-                    </h4>
-                    <p className='text-card-foreground mb-3 leading-relaxed'>
-                      To help you build a prototype you can use to showcase your
-                      idea, you will have access to:
-                    </p>
-                    <ul className='text-card-foreground space-y-2 ml-4 leading-relaxed'>
-                      <li className='flex items-start gap-2'>
-                        <span className='text-primary mt-1'>•</span>
-                        <span>
-                          Workshops on Figma, UI design and AI tools (like
-                          Cursor) to help you build a prototype you can touch
-                          and play with.
-                        </span>
-                      </li>
-                      <li className='flex items-start gap-2'>
-                        <span className='text-primary mt-1'>•</span>
-                        <span>
-                          On-site mentors, including experienced investors and
-                          founders, to help guide your pitch deck and make sure
-                          your vision is crystal clear.
-                        </span>
-                      </li>
-                    </ul>
-                  </div>
-
-                  <div>
-                    <h4 className='font-semibold text-card-foreground mb-2 text-lg'>
-                      Judging Panel
-                    </h4>
-                    <p className='text-card-foreground leading-relaxed'>
-                      The judges are experienced founders, VCs, and tech
-                      leaders. Your job is to convince them your venture is the
-                      one to fund.
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
+                </CardContent>
+              </Link>
             </Card>
 
-            {/* ============================================
-                BLOCKCHAIN TRACK CARD
-                Focuses on blockchain application development
-            ============================================ */}
-            <Card className='group relative overflow-hidden bg-gradient-to-br from-primary/5 via-white to-accent/5 backdrop-blur-sm border-2 border-primary/30 hover:border-primary/60 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1'>
-              <CardContent className='p-8'>
-                {/* Track Header */}
-                <div className='text-center mb-8'>
-                  <h3 className='text-3xl font-bold text-card-foreground mb-3'>
-                    Blockchain Track
+            <Card className='bg-card/50 backdrop-blur-md border border-border hover:bg-card/60 transition-colors cursor-pointer group'>
+              <Link href='/tracks'>
+                <CardContent className='p-6 text-center'>
+                  <h3 className='text-2xl font-semibold text-card-foreground mb-2 group-hover:text-primary transition-colors'>
+                    Tracks
                   </h3>
-                  <p className='text-lg text-muted-foreground font-medium'>
-                    - Create secure, transparent apps on the blockchain -
+                  <p className='text-muted-foreground'>
+                    Learn about Venture and Blockchain tracks
                   </p>
-                </div>
+                </CardContent>
+              </Link>
+            </Card>
 
-                {/* Visual Separator */}
-                <div className='w-full h-[2px] bg-gradient-to-r from-transparent via-primary/50 to-transparent mb-8'></div>
-
-                {/* Track Details */}
-                <div className='space-y-6'>
-                  <div>
-                    <h4 className='font-semibold text-card-foreground mb-2 text-lg'>
-                      What You&apos;ll Build
-                    </h4>
-                    <p className='text-card-foreground leading-relaxed'>
-                      This track is designed for developers who are interested
-                      in building secure, transparent apps on the blockchain.
-                      You will be provided with ample help and modern tools to
-                      supercharge your research and rapid development.
-                    </p>
-                  </div>
-
-                  <div>
-                    <h4 className='font-semibold text-card-foreground mb-2 text-lg'>
-                      24-Hour Challenge
-                    </h4>
-                    <p className='text-card-foreground leading-relaxed'>
-                      Your 24-hour challenge is to solve a problem you care
-                      about on campus using blockchain technology and build a
-                      secure, transparent decentralized application. You can
-                      also choose to dive deep into the ecosystem and write a
-                      report or project proposal.
-                    </p>
-                  </div>
-
-                  <div>
-                    <h4 className='font-semibold text-card-foreground mb-2 text-lg'>
-                      Judging Criteria
-                    </h4>
-                    <p className='text-card-foreground leading-relaxed'>
-                      The judges are experienced blockchain developers,
-                      researchers, and industry leaders. Your job is to convince
-                      them your project is the one to build.
-                    </p>
-                  </div>
-                  <div className='text-center'>
-                    <Link
-                      href='https://www.notion.so/Badger-Build-Fest-Blockchain-Track-2a4125054f828071903be6faa5ef7b5a?source=copy_link'
-                      target='_blank'
-                      rel='noopener noreferrer'
-                      className='text-lg text-primary font-medium underline hover:text-primary/80 transition-colors inline-flex items-center gap-1'
-                    >
-                      <span className='text-primary'>Track Details</span>
-                      <ArrowRight className='w-4 h-4' />
-                    </Link>
-                  </div>
-                </div>
-              </CardContent>
+            <Card className='bg-card/50 backdrop-blur-md border border-border hover:bg-card/60 transition-colors cursor-pointer group'>
+              <Link href='/project-showcase'>
+                <CardContent className='p-6 text-center'>
+                  <h3 className='text-2xl font-semibold text-card-foreground mb-2 group-hover:text-primary transition-colors'>
+                    Showcase
+                  </h3>
+                  <p className='text-muted-foreground'>
+                    Explore projects from participants
+                  </p>
+                </CardContent>
+              </Link>
             </Card>
           </div>
         </div>

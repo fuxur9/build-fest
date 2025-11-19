@@ -22,10 +22,9 @@ export default function Navbar() {
 
   // Navigation links
   const navLinks = [
-    { href: "#sponsors", label: "SPONSORS" },
-    { href: "#about", label: "ABOUT" },
-    { href: "#schedule", label: "SCHEDULE" },
-    { href: "#tracks", label: "TRACKS" },
+    { href: "/schedule", label: "SCHEDULE" },
+    { href: "/tracks", label: "TRACKS" },
+    { href: "/project-showcase", label: "SHOWCASE" },
   ];
 
   // Handle scroll detection
