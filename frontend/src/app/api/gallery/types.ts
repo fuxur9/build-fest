@@ -15,15 +15,12 @@ export interface GalleryProject {
     project_members:     GalleryProjectMember[],
     project_likes:       number,
     project_comments:    number,
-    project_badges:      string[]
+    project_badges:      string[],
+    project_url:         string
 };
 export interface GalleryProjectMember {
     member_name:     string,
     member_username: string
     member_image:    string,
     member_profile:  string
-};
-export interface GalleryCache {
-    cache_birthdate: number,
-    cache_lifespan:  number
 };

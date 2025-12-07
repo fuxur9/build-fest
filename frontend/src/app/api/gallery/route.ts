@@ -54,7 +54,8 @@ async function get_projects(page_max?: number): Promise<GalleryProject[]> {
                 }),
                 project_likes:       parseInt(project_dom.find("a > div > footer > div.counts > span[data-count=\"like\"]")   .text().trim()),
                 project_comments:    parseInt(project_dom.find("a > div > footer > div.counts > span[data-count=\"comment\"]").text().trim()),
-                project_badges:      new Array(project_badges.length).fill(0).map((_, badge_index) => project_badges.eq(badge_index).attr("alt"))
+                project_badges:      new Array(project_badges.length).fill(0).map((_, badge_index) => project_badges.eq(badge_index).attr("alt")),
+                project_url:         project_dom.find("a").attr("href")
             } as GalleryProject;
         }) as GalleryProject[]);
     })));

@@ -6,33 +6,24 @@
  * Displays projects submitted by participants in the hackathon
  */
 
-import ProjectsGrid, { Project } from "@/components/ProjectsGrid";
-
-// Placeholder project data - replace with actual data from your API or data source
-const sampleProjects: Project[] = [
-  {
-    id: "1",
-    name: "Sample Project 1",
-    team: "Team Alpha",
-    track: "Venture",
-    description:
-      "An innovative solution that solves real-world problems with cutting-edge technology.",
-    demoUrl: "https://example.com",
-    githubUrl: "https://github.com/example",
-  },
-  {
-    id: "2",
-    name: "Sample Project 2",
-    team: "Team Beta",
-    track: "Blockchain",
-    description:
-      "A decentralized application built on Solana that provides transparent and secure transactions.",
-    demoUrl: "https://example.com",
-    githubUrl: "https://github.com/example",
-  },
-];
+import ProjectsGrid from "@/components/ProjectsGrid";
+import { useEffect, useState } from "react";
+import { GalleryProject, RouteResponse } from "../api/gallery/types";
+import { string_join } from "@/utils/render";
 
 export default function ProjectShowcasePage() {
+
+  const [projects, set_projects] = useState([] as GalleryProject[]);
+
+  const update_projects = async () => {
+    const projects_data: RouteResponse<GalleryProject[]> = await fetch("/api/gallery").then(response => response.json());
+    set_projects(projects_data.result);
+  };
+
+  useEffect(() => {
+    update_projects();
+  }, []);
+
   return (
     <div className='min-h-screen w-full overflow-x-hidden bg-gradient-to-br from-background via-primary/10 to-background'>
       <section className='pt-32 pb-20 px-4 sm:px-6 lg:px-8'>
@@ -46,7 +37,15 @@ export default function ProjectShowcasePage() {
             </p>
           </div>
 
-          <ProjectsGrid projects={sampleProjects} />
+          <ProjectsGrid projects={projects.map(project_data => ({
+            id:          project_data.project_id,
+            name:        project_data.project_name,
+            team:        string_join(project_data.project_members.map(member_data => member_data.member_name)),
+            track:       "Blockchain",
+            description: project_data.project_description,
+            demoUrl:     project_data.project_url,
+            githubUrl:   "https://github.com/example",
+          }))} />
         </div>
       </section>
     </div>
