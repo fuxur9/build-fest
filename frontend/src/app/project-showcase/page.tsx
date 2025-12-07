@@ -38,7 +38,7 @@ export default function ProjectShowcasePage() {
           </div>
 
           <ProjectsGrid projects={projects.map(project_data => ({
-            id:          project_data.project_id,
+            id:          project_data.project_id.toString(),
             name:        project_data.project_name,
             team:        string_join(project_data.project_members.map(member_data => member_data.member_name)),
             track:       "Blockchain",

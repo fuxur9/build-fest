@@ -8,7 +8,7 @@ export interface GalleryPagination {
     page_count:    number;
 };
 export interface GalleryProject {
-    project_id:          string,
+    project_id:          number,
     project_name:        string,
     project_description: string,
     project_image:       string,

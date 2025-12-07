@@ -38,7 +38,7 @@ async function get_projects(page_max?: number): Promise<GalleryProject[]> {
             const project_members = project_dom.find("a > div > footer > div.members > span.user-profile-link");
             const project_badges  = project_dom.find("a > div > aside.entry-badge > img");
             return {
-                project_id:          project_dom.attr("data-software-id"),
+                project_id:          parseInt(project_dom.attr("data-software-id") ?? "-1"),
                 project_name:        project_dom.find("a > div > figure > figcaption > div > h5").text().trim(),
                 project_description: project_dom.find("a > div > figure > figcaption > div > p") .text().trim(),
                 project_image:       project_dom.find("a > div > figure > img").attr("src"),
