@@ -36,11 +36,7 @@ export default function Home() {
           {/* Primary Registration CTA Button */}
           <div className='flex justify-center mb-20'>
             <Button asChild size='lg' className='text-xl px-12 py-6'>
-              <Link
-                href='https://forms.gle/V41KWM2T9SjHj1cG9'
-                target='_blank'
-                rel='noopener noreferrer'
-              >
+              <Link href='/register'>
                 Register Now
                 <ArrowRight className='ml-2 w-6 h-6' />
               </Link>

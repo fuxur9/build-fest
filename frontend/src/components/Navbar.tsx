@@ -97,11 +97,7 @@ export default function Navbar() {
                 asChild
                 className='bg-primary text-white hover:bg-primary/90'
               >
-                <Link
-                  href='https://forms.gle/V41KWM2T9SjHj1cG9'
-                  target='_blank'
-                  rel='noopener noreferrer'
-                >
+                <Link href='/register'>
                   REGISTER
                 </Link>
               </Button>
@@ -171,9 +167,7 @@ export default function Navbar() {
               className='w-full bg-primary text-white hover:bg-primary/90 text-lg py-6'
             >
               <Link
-                href='https://forms.gle/V41KWM2T9SjHj1cG9'
-                target='_blank'
-                rel='noopener noreferrer'
+                href='/register'
                 onClick={handleLinkClick}
               >
                 REGISTER
