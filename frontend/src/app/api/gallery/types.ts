@@ -1,7 +1,13 @@
+export type GalleryTracks = {[key: string]: string};
+
 export interface RouteResponse<Type> {
     success: boolean,
     result:  Type,
     updated: Date
+};
+export interface GalleryEvent {
+    event_name:   string,
+    event_tracks: GalleryTracks
 };
 export interface GalleryPagination {
     page_capacity: number;
@@ -15,6 +21,7 @@ export interface GalleryProject {
     project_members:     GalleryProjectMember[],
     project_likes:       number,
     project_comments:    number,
+    project_tracks:      string[],
     project_badges:      string[],
     project_url:         string
 };

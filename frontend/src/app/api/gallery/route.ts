@@ -1,5 +1,6 @@
 import * as cheerio from "cheerio";
 import { GalleryPagination, GalleryProject, GalleryProjectMember, RouteResponse } from "./types";
+import { EVENT_DETAILS } from "./constants";
 
 // route cache in seconds
 export const revalidate = 300;
@@ -16,22 +17,28 @@ export async function GET(request: Request) {
     });
 }
 
-async function get_pagination(): Promise<GalleryPagination> {
-    const gallery_dom       = await get_dom();
+async function get_pagination(page_track: string): Promise<GalleryPagination> {
+    const gallery_dom       = await get_dom(page_track);
     const gallery_pages     = gallery_dom("#submission-gallery > div.pagination-info > span.selection > ul > li").slice(1, -1).length;
     const gallery_info      = gallery_dom("#submission-gallery > div.pagination-info > span.items_info > p").text().match(/^(\d+)\s–\s(\d+)\sof\s(\d+)$/);
     const gallery_parameter = ((gallery_info !== null) ? gallery_info.map(parameter => parseInt(parameter)) : (new Array(3).fill(0) as number[]));
     return {
         page_capacity: (gallery_parameter[2] - gallery_parameter[1] + 1),
-        page_count:    gallery_pages
+        page_count:    Math.max(gallery_pages, 1)
     } as GalleryPagination;
 }
 
 async function get_projects(page_max?: number): Promise<GalleryProject[]> {
-    const gallery_pagination = await get_pagination();
+    const gallery_tracks   = Object.keys(EVENT_DETAILS.event_tracks);
+    const gallery_projects = await Promise.all(gallery_tracks.map(track_id => get_projects_track(track_id, page_max)));
+    return get_union(gallery_projects.flat());
+}
+
+async function get_projects_track(page_track: string, page_max?: number): Promise<GalleryProject[]> {
+    const gallery_pagination = await get_pagination(page_track);
     const gallery_pages      = ((page_max !== undefined) ? Math.min(gallery_pagination.page_count, page_max) : gallery_pagination.page_count);
     const page_projects      = await Promise.all(new Array(gallery_pages).fill(0).map((_, page_index) => new Promise(async (resolve) => {
-        const page_dom      = await get_dom(page_index + 1);
+        const page_dom      = await get_dom(page_track, (page_index + 1));
         const page_projects = page_dom("#submission-gallery > div.row > div.gallery-item");
         resolve(new Array(page_projects.length).fill(0).map((_, project_index) => {
             const project_dom     = page_projects.eq(project_index);
@@ -54,6 +61,7 @@ async function get_projects(page_max?: number): Promise<GalleryProject[]> {
                 }),
                 project_likes:       parseInt(project_dom.find("a > div > footer > div.counts > span[data-count=\"like\"]")   .text().trim()),
                 project_comments:    parseInt(project_dom.find("a > div > footer > div.counts > span[data-count=\"comment\"]").text().trim()),
+                project_tracks:      [EVENT_DETAILS.event_tracks[page_track]],
                 project_badges:      new Array(project_badges.length).fill(0).map((_, badge_index) => project_badges.eq(badge_index).attr("alt")),
                 project_url:         project_dom.find("a").attr("href")
             } as GalleryProject;
@@ -62,7 +70,21 @@ async function get_projects(page_max?: number): Promise<GalleryProject[]> {
     return (page_projects as GalleryProject[][]).flat();
 }
 
-async function get_dom(page_number?: number): Promise<cheerio.CheerioAPI> {
-    const gallery_html  = await fetch(`https://badger-build-fest.devpost.com/project-gallery?page=${page_number ?? ""}`).then(response => response.text());
+async function get_dom(page_track: string, page_number?: number): Promise<cheerio.CheerioAPI> {
+    const gallery_url = new URL(`https://${EVENT_DETAILS.event_name}.devpost.com/submissions/search`);
+    gallery_url.searchParams.append("utf8",                                       "✓");
+    gallery_url.searchParams.append("page",                                       (page_number?.toString() ?? ""));
+    gallery_url.searchParams.append("filter[which track are you applying to?][]", `${page_track} track`);
+    const gallery_html = await fetch(gallery_url).then(response => response.text());
     return cheerio.load(gallery_html);
+}
+
+function get_union(page_projects: GalleryProject[]): GalleryProject[] {
+    return Object.values(page_projects.reduce((union_accumulator, union_current) => ({
+        ...union_accumulator,
+        [union_current.project_id]: {
+            ...union_current,
+            project_tracks: [...new Set([...(union_accumulator[union_current.project_id]?.project_tracks ?? []), ...union_current.project_tracks])]
+        }
+    }), {} as {[key: string]: GalleryProject}))
 }
