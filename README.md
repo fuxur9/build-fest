@@ -2,9 +2,7 @@
 
 A modern Next.js website for the Badger Build Fest 2025 hackathon event.
 
-## Quick Start (Frontend Only)
-
-If you're only working on the frontend website, you don't need to set up Solana or blockchain tools:
+## Quick Start
 
 ```bash
 cd frontend
@@ -21,7 +19,6 @@ The website will be available at `http://localhost:3000`
 - **Sponsor Display**: Tiered sponsor display with logos
 - **Partner Organizations**: Partner organization cards
 - **Responsive Design**: Mobile-friendly UI built with Tailwind CSS
-- **Solana Integration** (Optional): NFT minting functionality for participation proof
 
 ## Project Structure
 
@@ -33,23 +30,13 @@ badger-hacks/
 │   │   ├── components/  # React components
 │   │   └── lib/      # Utility functions
 │   └── public/        # Static assets
-├── smart-contract/    # (Optional) Anchor Solana program for NFT minting
-│   ├── programs/     # Anchor program source code
-│   └── scripts/      # Deployment and utility scripts
 └── README.md         # This file
 ```
-
-## Documentation
-
-- **[SETUP.md](./SETUP.md)**: Detailed setup instructions for both frontend and smart contract development
-- Frontend developers can work without the `smart-contract` folder
-- Solana/blockchain features are optional and clearly marked in the documentation
 
 ## Tech Stack
 
 - **Frontend**: Next.js 15, React 19, TypeScript
 - **Styling**: Tailwind CSS, shadcn/ui components
-- **Blockchain** (Optional): Solana, Anchor framework
 - **Deployment**: Vercel (frontend)
 
 ## Contributing
