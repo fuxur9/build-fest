@@ -62,3 +62,6 @@ Cargo.lock
 .anchor/
 test-ledger/
 
+# Backend
+backend/
+
