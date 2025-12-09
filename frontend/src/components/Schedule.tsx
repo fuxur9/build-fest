@@ -102,81 +102,76 @@ const scheduleData: ScheduleRow[] = [
 
 export default function Schedule() {
   return (
-    <section id='schedule' className='py-20 px-4 sm:px-6 lg:px-8'>
-      <div className='max-w-7xl mx-auto'>
-        <div className='text-center mb-16'>
-          <h2 className='text-5xl md:text-6xl font-bold text-foreground mb-6'>
-            Event Schedule
-          </h2>
-        </div>
+    <div id='schedule' className='max-w-7xl mx-auto'>
+      <div className='text-center mb-16'>
+        <h1 className='text-5xl md:text-6xl font-bold text-foreground mb-6'>
+          Event Schedule
+        </h1>
+      </div>
 
-        <div className='flex justify-center'>
-          <div className='w-full max-w-5xl'>
-            <Card className='bg-card/50 backdrop-blur-md border border-border'>
-              <CardContent className='p-6 md:p-8'>
-                <div className='overflow-x-auto'>
-                  <div className='min-w-full'>
-                    {/* Header */}
-                    <div className='grid grid-cols-3 gap-4 mb-4 pb-4 border-b-2 border-border'>
-                      <div className='font-bold text-lg text-card-foreground'>
-                        Time
-                      </div>
-                      <div className='text-lg text-card-foreground'>
-                        Main Event
-                      </div>
-                      <div className='text-lg text-card-foreground'>
-                        Side Event
-                      </div>
+      <div className='flex justify-center'>
+        <div className='w-full max-w-5xl'>
+          <Card className='bg-card/50 backdrop-blur-md border border-border'>
+            <CardContent className='p-6 md:p-8'>
+              <div className='overflow-x-auto'>
+                <div className='min-w-full'>
+                  {/* Header */}
+                  <div className='grid grid-cols-3 gap-4 mb-4 pb-4 border-b-2 border-border'>
+                    <div className='font-bold text-lg text-card-foreground'>
+                      Time
                     </div>
-                    {/* Rows */}
-                    <div className='space-y-1'>
-                      {scheduleData.map((row, index) => {
-                        const isDayHeader =
-                          index === 0 ||
-                          scheduleData[index - 1].day !== row.day;
-                        const isLastOfDay =
-                          index === scheduleData.length - 1 ||
-                          scheduleData[index + 1].day !== row.day;
-
-                        return (
-                          <div key={index}>
-                            {isDayHeader && (
-                              <div className='mt-6 mb-4 pt-4 first:mt-0 first:pt-0'>
-                                <h3 className='text-2xl font-bold text-card-foreground'>
-                                  {row.day === "Saturday"
-                                    ? "Saturday, November 15th"
-                                    : "Sunday, November 16th"}
-                                </h3>
-                              </div>
-                            )}
-                            <div
-                              className={`grid grid-cols-3 gap-4 py-3 px-2 rounded-md hover:bg-card/30 transition-colors ${
-                                isLastOfDay
-                                  ? "mb-4 border-b-2 border-border"
-                                  : ""
-                              }`}
-                            >
-                              <div className='font-semibold text-card-foreground'>
-                                {row.time}
-                              </div>
-                              <div className='font-semibold text-muted-foreground'>
-                                {row.mainEvent || ""}
-                              </div>
-                              <div className='font-semibold text-muted-foreground'>
-                                {row.sideEvent || ""}
-                              </div>
-                            </div>
-                          </div>
-                        );
-                      })}
+                    <div className='text-lg text-card-foreground'>
+                      Main Event
+                    </div>
+                    <div className='text-lg text-card-foreground'>
+                      Side Event
                     </div>
                   </div>
+                  {/* Rows */}
+                  <div className='space-y-1'>
+                    {scheduleData.map((row, index) => {
+                      const isDayHeader =
+                        index === 0 || scheduleData[index - 1].day !== row.day;
+                      const isLastOfDay =
+                        index === scheduleData.length - 1 ||
+                        scheduleData[index + 1].day !== row.day;
+
+                      return (
+                        <div key={index}>
+                          {isDayHeader && (
+                            <div className='mt-6 mb-4 pt-4 first:mt-0 first:pt-0'>
+                              <h2 className='text-2xl font-bold text-card-foreground'>
+                                {row.day === "Saturday"
+                                  ? "Saturday, November 15th"
+                                  : "Sunday, November 16th"}
+                              </h2>
+                            </div>
+                          )}
+                          <div
+                            className={`grid grid-cols-3 gap-4 py-3 px-2 rounded-md hover:bg-card/30 transition-colors ${
+                              isLastOfDay ? "mb-4 border-b-2 border-border" : ""
+                            }`}
+                          >
+                            <div className='font-semibold text-card-foreground'>
+                              {row.time}
+                            </div>
+                            <div className='font-semibold text-muted-foreground'>
+                              {row.mainEvent || ""}
+                            </div>
+                            <div className='font-semibold text-muted-foreground'>
+                              {row.sideEvent || ""}
+                            </div>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
                 </div>
-              </CardContent>
-            </Card>
-          </div>
+              </div>
+            </CardContent>
+          </Card>
         </div>
       </div>
-    </section>
+    </div>
   );
 }

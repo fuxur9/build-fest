@@ -5,7 +5,7 @@ import { EVENT_DETAILS } from "./constants";
 // route cache in seconds
 export const revalidate = 300;
 
-export async function GET(request: Request) {
+export async function GET() {
     const route_response: RouteResponse<GalleryProject[]> = {
         success: true,
         result:  await get_projects(),

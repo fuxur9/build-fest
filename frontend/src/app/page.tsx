@@ -53,9 +53,9 @@ export default function Home() {
             <Card className='bg-card/50 backdrop-blur-md border border-border hover:bg-card/60 transition-colors'>
               <CardContent className='p-4 text-center'>
                 <MapPin className='w-12 h-12 text-primary mx-auto mb-4' />
-                <h3 className='text-2xl font-semibold text-card-foreground mb-2'>
+                <h2 className='text-2xl font-semibold text-card-foreground mb-2'>
                   Location
-                </h3>
+                </h2>
                 <p className='text-xl text-muted-foreground'>
                   Morgridge Hall Basement Area
                 </p>
@@ -65,9 +65,9 @@ export default function Home() {
             <Card className='bg-card/50 backdrop-blur-md border border-border hover:bg-card/60 transition-colors'>
               <CardContent className='p-4 text-center'>
                 <Calendar className='w-12 h-12 text-primary mx-auto mb-4' />
-                <h3 className='text-2xl font-semibold text-card-foreground mb-2'>
+                <h2 className='text-2xl font-semibold text-card-foreground mb-2'>
                   Date
-                </h3>
+                </h2>
                 <p className='text-xl text-muted-foreground'>
                   12:00 PM Nov 15 - 5:00 PM Nov 16
                 </p>

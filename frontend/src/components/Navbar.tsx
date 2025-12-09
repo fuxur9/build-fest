@@ -133,6 +133,14 @@ export default function Navbar() {
             : "opacity-0 pointer-events-none"
         }`}
         onClick={toggleMobileMenu}
+        aria-label='Close mobile menu'
+        role='button'
+        tabIndex={isMobileMenuOpen ? 0 : -1}
+        onKeyDown={(e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            toggleMobileMenu();
+          }
+        }}
       />
 
       {/* Mobile Menu */}

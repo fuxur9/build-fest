@@ -12,12 +12,21 @@ import { GalleryProject, RouteResponse } from "../api/gallery/types";
 import { string_join } from "@/utils/render";
 
 export default function ProjectShowcasePage() {
-
   const [projects, set_projects] = useState([] as GalleryProject[]);
+  const [isLoading, setIsLoading] = useState(true);
 
   const update_projects = async () => {
-    const projects_data: RouteResponse<GalleryProject[]> = await fetch("/api/gallery").then(response => response.json());
-    set_projects(projects_data.result);
+    try {
+      setIsLoading(true);
+      const projects_data: RouteResponse<GalleryProject[]> = await fetch(
+        "/api/gallery"
+      ).then((response) => response.json());
+      set_projects(projects_data.result);
+    } catch (error) {
+      console.error("Failed to fetch projects:", error);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   useEffect(() => {
@@ -37,15 +46,23 @@ export default function ProjectShowcasePage() {
             </p>
           </div>
 
-          <ProjectsGrid projects={projects.map(project_data => ({
-            id:          project_data.project_id.toString(),
-            name:        project_data.project_name,
-            team:        string_join(project_data.project_members.map(member_data => member_data.member_name)),
-            track:       (project_data.project_tracks[0] as any),
-            description: project_data.project_description,
-            demoUrl:     project_data.project_url,
-            githubUrl:   undefined,
-          }))} />
+          <ProjectsGrid
+            isLoading={isLoading}
+            projects={projects.map((project_data) => ({
+              id: project_data.project_id.toString(),
+              name: project_data.project_name,
+              team: string_join(
+                project_data.project_members.map(
+                  (member_data) => member_data.member_name
+                )
+              ),
+              track: project_data.project_tracks[0] as "Venture" | "Blockchain",
+              description: project_data.project_description,
+              demoUrl: project_data.project_url,
+              githubUrl: undefined,
+              imageUrl: project_data.project_image,
+            }))}
+          />
         </div>
       </section>
     </div>

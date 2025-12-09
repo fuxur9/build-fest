@@ -131,4 +131,11 @@
   body {
     @apply bg-background text-foreground font-sans;
   }
+
+  /* Enhanced focus indicators for keyboard navigation */
+  a:focus-visible,
+  button:focus-visible,
+  [role="button"]:focus-visible {
+    @apply outline-2 outline-offset-2 outline-primary ring-2 ring-primary ring-offset-2;
+  }
 }
