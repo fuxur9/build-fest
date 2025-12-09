@@ -41,10 +41,10 @@ export default function ProjectShowcasePage() {
             id:          project_data.project_id.toString(),
             name:        project_data.project_name,
             team:        string_join(project_data.project_members.map(member_data => member_data.member_name)),
-            track:       "Blockchain",
+            track:       (project_data.project_tracks[0] as any),
             description: project_data.project_description,
             demoUrl:     project_data.project_url,
-            githubUrl:   "https://github.com/example",
+            githubUrl:   undefined,
           }))} />
         </div>
       </section>

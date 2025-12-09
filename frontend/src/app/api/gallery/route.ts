@@ -86,5 +86,5 @@ function get_union(page_projects: GalleryProject[]): GalleryProject[] {
             ...union_current,
             project_tracks: [...new Set([...(union_accumulator[union_current.project_id]?.project_tracks ?? []), ...union_current.project_tracks])]
         }
-    }), {} as {[key: string]: GalleryProject}))
+    }), {} as {[key: string]: GalleryProject})).sort((project_a, project_b) => (project_a.project_id - project_b.project_id))
 }
